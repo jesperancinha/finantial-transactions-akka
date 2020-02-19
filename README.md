@@ -4,7 +4,7 @@
 
 Fellow colleagues at ING have developed the Baker project. In this project, we will examine its potential
 
-> Story line coming up
+> This bakery does its best to be special. In this setup, the cake maker is a specialist in making portuguese snacks.
 
 ## Status
 
@@ -59,6 +59,9 @@ export SDKMAN_DIR="/root/.sdkman"
 apt -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+## Domain References
+
+-   [Peixinhos da Horta by Vaqueiro](https://www.vaqueiro.pt/receitas/detalhe/1535/peixinhos-da-horta)
 
 ## References
 
