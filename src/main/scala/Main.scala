@@ -1,4 +1,4 @@
-import com.ing.baker.recipe.scaladsl.{Event, Ingredient}
+import com.ing.baker.recipe.scaladsl.{Event, Ingredient, Interaction}
 
 object Main extends App {
   println("Hello, World!");
@@ -9,16 +9,26 @@ object Main extends App {
   val egg = Ingredient[String]("One egg")
   val pepper = Ingredient[String]("Pepper")
   val oliveOil = Ingredient[String]("Olive Oil")
+  val batter = Ingredient[String]("Batter")
 
+  val dinnerTime = Event("Dinner time")
+  val familyIsHungry = Event("Family is hungry")
   val beansWashed = Event("Beans washed")
+
   val removeBeanThread = Event("Beans thread removed")
   val cutPodsInHalf = Event("Cut pods in half")
   val beansAreCooked = Event("Beans are cooked")
   val beansDrained = Event("Beans are drained from any water")
-  val batterPrepared = Event("Batter is prepared")
   val flowerWithEggsMixed = Event("Flower with eggs mixed")
   val mixIsSeasoned = Event("Seasoned with salt and pepper")
   val moreColdWaterAdded = Event("Cold water added")
   val passedPodsThroughBatter = Event("Passed pods through batter")
   val podsAreFried = Event("Pods are fried")
+
+  val makeBatter = Interaction("Mix flower with eggs",
+    Seq(egg, flower), output = Seq(flowerWithEggsMixed))
+
+  val seasonBetter = Interaction("Season Mix",
+    Seq(batter, salt, pepper), output = Seq(mixIsSeasoned))
+
 }
