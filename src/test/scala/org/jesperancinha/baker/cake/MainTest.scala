@@ -17,5 +17,7 @@ class MainTest extends AnyFlatSpec with Matchers {
     val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHorta)
 
     compileRecipe.validationErrors should be('empty)
+
+    println(compileRecipe.getRecipeVisualization);
   }
 }
