@@ -66,7 +66,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## References
 
--   [ING BAKER](https://github.com/ing-bank/baker)
+-   [ING Baker](https://github.com/ing-bank/baker)
+-   [ING Baker Document](https://ing-bank.github.io/baker)
 -   [Webgraphiz](http://www.webgraphviz.com/)
 -   [scale.bythebay.io: Nikola Kasev, Declare, verify and execute microservices-based process flows](https://www.youtube.com/watch?v=0bWQwUmeXHU)
 -   [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method)
