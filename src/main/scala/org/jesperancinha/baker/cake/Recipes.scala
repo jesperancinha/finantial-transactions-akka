@@ -5,8 +5,8 @@ import com.ing.baker.recipe.scaladsl.{Event, Ingredient, Interaction, Recipe}
 object Recipes {
 
   val greenBeans: Ingredient[String] = Ingredient[String]("500 g of green beans")
-  val greenBeansWashed: Ingredient[String] = Ingredient[String]("500 g of washed green beans")
-  val greenBeansThreadRemoved: Ingredient[String] = Ingredient[String]("500 g of green beans with no Thread")
+  val greenBeansWashed: Ingredient[String] = Ingredient[String]("Washed green beans")
+  val greenBeansThreadRemoved: Ingredient[String] = Ingredient[String]("Green beans with no Thread")
   val halfPods: Ingredient[String] = Ingredient[String]("Half pods")
   val cookedBeans: Ingredient[String] = Ingredient[String]("Cooked beans")
   val drainedBeans: Ingredient[String] = Ingredient[String]("Drained beans")
@@ -21,7 +21,6 @@ object Recipes {
   val water: Ingredient[String] = Ingredient[String]("Water")
   val peixinhosDaHorta: Ingredient[String] = Ingredient[String]("Peixinhos da Horta")
 
-
   val dinnerTime: Event = Event("Dinner time")
   val familyIsHungry: Event = Event("Family is hungry")
 
@@ -30,7 +29,7 @@ object Recipes {
     maxFiringLimit = Option(1))
   val beansWashed: Event = Event("Beans washed", greenBeansWashed)
   val removedBeanThread: Event = Event("Beans thread removed", greenBeansThreadRemoved)
-  val podsAreCutInHalf: Event = Event("Pods are cut in falf", halfPods)
+  val podsAreCutInHalf: Event = Event("Pods are cut in half", halfPods)
   val beansAreCooked: Event = Event("Beans are cooked", cookedBeans)
   val beansDrained: Event = Event("Beans are drained from any water", drainedBeans)
   val flowerWithEggsMixed: Event = Event("Flower with eggs mixed")
@@ -39,10 +38,10 @@ object Recipes {
   val passedPodsThroughBatter: Event = Event("Passed pods through batter", batteredPods)
   val podsAreFried: Event = Event("Pods are fried", peixinhosDaHorta)
 
-
   val setupCookingTable: Interaction = Interaction("Setup Cooking Table",
     Seq(greenBeans, salt, flower, egg, pepper, oliveOil, water), output = Seq(cookingTableDone))
     .withRequiredEvents(dinnerTime, familyIsHungry)
+
 
   val washBeans: Interaction = Interaction("Washing up Beans",
     Seq(greenBeans), output = Seq(beansWashed)).withRequiredEvents(cookingTableDone)

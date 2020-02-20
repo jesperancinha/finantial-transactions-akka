@@ -17,9 +17,10 @@ Fellow colleagues at ING have developed the Baker project. In this project, we w
     -   Issue this command `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
     -   Wait for completion
     -   Restart computer (Even if it says otherwise)
-    -   Got to Windows store and install Ubuntu
+    -   Got to Windows store and install [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
     -   Launch Ubuntu
     -   Wait for completion
+    -   For Intellij, configure Terminal to run just bash.exe
 
 -  Recipe for Java 8 on Windows Ubuntu Shell
 
@@ -73,6 +74,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 -   [Ubuntu for Windows](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
 -   [How to Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
 -   [Oh My ZSH!](https://github.com/ohmyzsh/ohmyzsh/)
+-   [10 easy ways to speed up Windows 10](https://www.cnet.com/how-to/easy-ways-to-speed-up-windows-10/)
+
 
 ## About me
 
