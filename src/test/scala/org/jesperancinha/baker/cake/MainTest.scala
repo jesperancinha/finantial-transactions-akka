@@ -25,7 +25,7 @@ class MainTest extends AnyFlatSpec with Matchers {
     println(compileRecipe.getRecipeVisualization);
   }
 
-  "Baking a peixinhos da horta recipe" should "bake it" in {
+  "Baking a peixinhos da horta recipe" should "start baking it" in {
     val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
 
     compileRecipe.validationErrors should be('empty)
@@ -43,7 +43,8 @@ class MainTest extends AnyFlatSpec with Matchers {
       recipeId <- baker.addRecipe(compileRecipe)
       _ <- baker.bake(recipeId, "recipe-instance-id")
       _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id",  EventInstance(name = Recipes.dinnerTime.name))
-      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id",  EventInstance(name = Recipes.familyIsHungry.name))
+      nameEventInstance = EventInstance(name = Recipes.familyIsHungry.name)
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id",  nameEventInstance)
     } yield ()
 
 
@@ -53,4 +54,32 @@ class MainTest extends AnyFlatSpec with Matchers {
     println(unit)
     println(completeGraph)
   }
+  "Baking a peixinhos da horta recipe" should "complete baking it" in {
+    val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
+
+    compileRecipe.validationErrors should be('empty)
+
+    implicit val actorSystem: ActorSystem =
+      ActorSystem("PeixinhosDaHortaSystem")
+
+    val baker: Baker = Baker.akkaLocalDefault(actorSystem)
+
+    val program: Future[Unit] = for {
+      _ <- baker.addInteractionInstances(Seq(
+        setupCookingTableInstance, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
+        seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
+      recipeId <- baker.addRecipe(compileRecipe)
+      _ <- baker.bake(recipeId, "recipe-instance-id")
+     _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id",  EventInstance(name = Recipes.dinnerTime.name))
+     _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id",  EventInstance(name = Recipes.familyIsHungry.name))
+    } yield ()
+
+    val unit: Unit = Await.result(program, 5 seconds)
+
+    val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 5 seconds)
+    println(unit)
+    println(completeGraph)
+  }
+
 }

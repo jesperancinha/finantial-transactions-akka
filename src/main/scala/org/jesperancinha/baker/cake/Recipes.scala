@@ -27,7 +27,9 @@ object Recipes {
   val peixinhosDaHorta: Ingredient[String] = Ingredient[String]("Peixinhos da Horta")
 
   val dinnerTime: Event = Event("Dinner time")
-  val familyIsHungry: Event = Event("Family is hungry")
+  val familyIsHungry: Event = Event("Family is hungry"
+//    , greenBeans, salt, flower, egg, pepper, oliveOil, water
+  )
 
   val cookingTableDone: Event = new Event("Cooking Table Setup",
     Seq(greenBeans, salt, flower, egg, pepper, oliveOil, water),
