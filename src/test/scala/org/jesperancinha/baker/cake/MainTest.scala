@@ -41,14 +41,14 @@ class MainTest extends AnyFlatSpec with Matchers {
         drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
         seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
       recipeId <- baker.addRecipe(compileRecipe)
-      recipeInstanceId = "my-id"
-      _ <- baker.bake(recipeId, recipeInstanceId)
+      _ <- baker.bake(recipeId, "recipe-instance-id")
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id",  EventInstance(name = Recipes.dinnerTime.name))
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id",  EventInstance(name = Recipes.familyIsHungry.name))
     } yield ()
+
+
     val unit: Unit = Await.result(program, 5 seconds)
-    baker.fireEventAndResolveWhenCompleted("my-id", EventInstance.unsafeFrom(Recipes.familyIsHungry))
-    baker.fireEventAndResolveWhenCompleted("my-id", EventInstance.unsafeFrom(Recipes.dinnerTime))
-    Thread.sleep(5000)
-    val completeGraph = Await.result(baker.getVisualState("my-id"), 5 seconds)
+    val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 5 seconds)
 
     println(unit)
     println(completeGraph)
