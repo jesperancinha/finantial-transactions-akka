@@ -38,7 +38,7 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
-        setupCookingTableInstance, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        setupCookingTableInstanceForBeans, setupCookingTableInstanceForBatter, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
         drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
         seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
       recipeId <- baker.addRecipe(compileRecipe)
@@ -57,7 +57,7 @@ class MainTest extends AnyFlatSpec with Matchers {
     } yield ()
 
 
-    val unit: Unit = Await.result(program, 5 seconds)
+    val unit: Unit = Await.result(program, 15 seconds)
     val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 5 seconds)
 
     println(unit)
@@ -75,7 +75,7 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
-        setupCookingTableInstance, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        setupCookingTableInstanceForBeans, setupCookingTableInstanceForBatter, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
         drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
         seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
       recipeId <- baker.addRecipe(compileRecipe)
