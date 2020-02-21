@@ -2,7 +2,7 @@ package org.jesperancinha.baker.cake
 
 import com.ing.baker.recipe.scaladsl.{Event, Ingredient, Interaction, Recipe}
 import com.ing.baker.runtime.scaladsl.{EventInstance, IngredientInstance, InteractionInstance}
-import com.ing.baker.types.CharArray
+import com.ing.baker.types.{CharArray, PrimitiveValue}
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -27,13 +27,9 @@ object Recipes {
   val peixinhosDaHorta: Ingredient[String] = Ingredient[String]("Peixinhos da Horta")
 
   val dinnerTime: Event = Event("Dinner time")
-  val familyIsHungry: Event = Event("Family is hungry"
-//    , greenBeans, salt, flower, egg, pepper, oliveOil, water
-  )
+  val familyIsHungry: Event = Event("Family is hungry", greenBeans, salt, flower, egg, pepper, oliveOil, water)
 
-  val cookingTableDone: Event = new Event("Cooking Table Setup",
-    Seq(greenBeans, salt, flower, egg, pepper, oliveOil, water),
-    maxFiringLimit = Option(1))
+  val cookingTableDone: Event = Event("Cooking Table Setup")
   val beansWashed: Event = Event("Beans washed", greenBeansWashed)
   val removedBeanThread: Event = Event("Beans thread removed", greenBeansThreadRemoved)
   val podsAreCutInHalf: Event = Event("Pods are cut in half", halfPods)
@@ -57,7 +53,7 @@ object Recipes {
 
   def handleCookingTableSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(cookingTableDone)).orElse(null)
+      Option.apply(EventInstance(name = cookingTableDone.name)).orElse(null)
     }
   }
 
@@ -72,7 +68,7 @@ object Recipes {
 
   def handleWashedBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(beansWashed)).orElse(null)
+      Option.apply(EventInstance(name = beansWashed.name)).orElse(null)
     }
   }
 
@@ -87,7 +83,7 @@ object Recipes {
 
   def handleBeanThreadRemoval(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(removedBeanThread)).orElse(null)
+      Option.apply(EventInstance(name = removedBeanThread.name)).orElse(null)
     }
   }
 
@@ -111,7 +107,7 @@ object Recipes {
 
   def handleCookBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(cookingTableDone)).orElse(null)
+      Option.apply(EventInstance(name = cookingTableDone.name)).orElse(null)
     }
   }
 
@@ -126,7 +122,7 @@ object Recipes {
 
   def handleDrainedBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(beansDrained)).orElse(null)
+      Option.apply(EventInstance(name = beansDrained.name)).orElse(null)
     }
   }
 
@@ -141,7 +137,7 @@ object Recipes {
 
   def handleMakeBatter(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(flowerWithEggsMixed)).orElse(null)
+      Option.apply(new EventInstance(name = flowerWithEggsMixed.name,  Map(batter.name-> PrimitiveValue("Hand made")))).orElse(null)
     }
   }
 
@@ -157,7 +153,7 @@ object Recipes {
 
   def handleBatterSeasoning(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(mixIsSeasoned)).orElse(null)
+      Option.apply(EventInstance(name = mixIsSeasoned.name)).orElse(null)
     }
   }
 
@@ -172,7 +168,7 @@ object Recipes {
 
   def handleAddColdWater(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(moreColdWaterAdded)).orElse(null)
+      Option.apply(EventInstance(name = moreColdWaterAdded.name)).orElse(null)
     }
   }
 
@@ -188,7 +184,7 @@ object Recipes {
 
   def handlePassPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(passedPodsThroughBatter)).orElse(null)
+      Option.apply(EventInstance(name = passedPodsThroughBatter.name)).orElse(null)
     }
   }
 
@@ -204,7 +200,7 @@ object Recipes {
 
   def handeFryPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance.unsafeFrom(podsAreFried)).orElse(null)
+      Option.apply(EventInstance(name = podsAreFried.name)).orElse(null)
     }
   }
 
