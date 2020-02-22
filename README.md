@@ -1,20 +1,20 @@
 # Baker portuguese recipes
 
-[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Baker%20portuguese%20recipes&color=informational)](https://github.com/jesperancinha/baker-portuguese-recipes) 
-[![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/baker-portuguese-recipes.svg)](#)
+[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Baker%20portuguese%20recipes&color=informational)](https://github.com/jesperancinha/portuguese-recipes) 
+[![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/portuguese-recipes.svg)](#)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0db13a03e7a64e939196903eb7abf95d)](https://www.codacy.com/manual/jofisaes/baker-portuguese-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/baker-portuguese-recipes&amp;utm_campaign=Badge_Grade)
-[![CircleCI](https://circleci.com/gh/jesperancinha/baker-portuguese-recipes.svg?style=svg)](https://circleci.com/gh/jesperancinha/baker-portuguese-recipes)
-[![codebeat badge](https://codebeat.co/badges/f786d36a-1dc5-40b3-b59c-17518b85b4c3)](https://codebeat.co/projects/github-com-jesperancinha-baker-portuguese-recipes-master)[
-![Build Status](https://travis-ci.org/jesperancinha/baker-portuguese-recipes.svg?branch=master)](https://travis-ci.org/jesperancinha/baker-portuguese-recipes)
-[![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/baker-portuguese-recipes?branch=master)](https://bettercodehub.com/)
-[![Build status](https://ci.appveyor.com/api/projects/status/k2ukf8h95eys6npr?svg=true)](https://ci.appveyor.com/project/jesperancinha/baker-portuguese-recipes)
-[![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/baker-portuguese-recipes/badge.svg)](https://snyk.io/test/github/jesperancinha/baker-portuguese-recipes)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4ba1ad293d674b00b66db2db6fc6e3e9)](https://www.codacy.com/manual/jofisaes/portuguese-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/portuguese-recipes&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/jesperancinha/portuguese-recipes.svg?style=svg)](https://circleci.com/gh/jesperancinha/portuguese-recipes)
+[![codebeat badge](https://codebeat.co/badges/58319e19-d5c1-414d-ad76-7f8acf833e60)](https://codebeat.co/projects/github-com-jesperancinha-portuguese-recipes-master)
+[![Build Status](https://travis-ci.org/jesperancinha/portuguese-recipes.svg?branch=master)](https://travis-ci.org/jesperancinha/portuguese-recipes)
+[![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/portuguese-recipes?branch=master)](https://bettercodehub.com/results/jesperancinha/portuguese-recipes)
+[![Build status](https://ci.appveyor.com/api/projects/status/k2ukf8h95eys6npr?svg=true)](https://ci.appveyor.com/project/jesperancinha/portuguese-recipes)
+[![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/portuguese-recipes/badge.svg)](https://snyk.io/test/github/jesperancinha/portuguese-recipes)
 
-[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/baker-portuguese-recipes.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/baker-portuguese-recipes.svg)](#)
-[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/baker-portuguese-recipes.svg)](#)
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/portuguese-recipes.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/portuguese-recipes.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/portuguese-recipes.svg)](#)
 
 
 
