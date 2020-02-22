@@ -10,4 +10,4 @@ COPY peixinhos-da-horta-scala $HOME/peixinhos-da-horta-scala
 
 COPY entrypoint.sh $HOME
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT  $HOME/entrypoint.sh
