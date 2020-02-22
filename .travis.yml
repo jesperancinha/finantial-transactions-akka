@@ -1,4 +1,9 @@
-os: osx
 language: java
 jdk:
-  - openjdk8
+  - openjdk13
+services:
+  - docker
+
+install:
+  - cd docker-travis && docker build . -t portuguese-recipes-container
+  - cd docker-travis && docker run portuguese-recipes-container
