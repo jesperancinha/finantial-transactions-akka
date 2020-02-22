@@ -1,4 +1,4 @@
-package org.jesperancinha.baker.cake
+package org.jesperancinha.portuguese.recipes.peixinhos
 
 import com.ing.baker.recipe.scaladsl.{Event, Ingredient, Interaction, Recipe}
 import com.ing.baker.runtime.scaladsl.{EventInstance, IngredientInstance, InteractionInstance}

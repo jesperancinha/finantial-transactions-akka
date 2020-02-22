@@ -1,10 +1,11 @@
-package org.jesperancinha.baker.cake
+package org.jesperancinha.portuguese.recipes.peixinhos
 
 import akka.actor.ActorSystem
 import com.ing.baker.compiler.RecipeCompiler
 import com.ing.baker.runtime.scaladsl.{Baker, EventInstance}
 import com.ing.baker.types.PrimitiveValue
-import org.jesperancinha.baker.cake.Recipes.{greenBeans, _}
+import org.jesperancinha.portuguese.recipes.peixinhos.Recipes.{greenBeans, _}
+import org.jesperancinha.portuguese.recipes.peixinhos.Recipes
 import org.scalatest.Matchers
 import org.scalatest.flatspec.AnyFlatSpec
 
