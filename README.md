@@ -103,7 +103,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 -   [Oh My ZSH!](https://github.com/ohmyzsh/ohmyzsh/)
 -   [10 easy ways to speed up Windows 10](https://www.cnet.com/how-to/easy-ways-to-speed-up-windows-10/)
 
-
 ## About me
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social)](https://twitter.com/joaofse)
