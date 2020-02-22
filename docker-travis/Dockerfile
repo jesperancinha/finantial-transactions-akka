@@ -1,4 +1,4 @@
-FROM jesperancinha/je-all-build-jdk8:0.0.1
+FROM jesperancinha/je-all-build-jdk-8:0.0.1
 
 COPY ../bacalhao-a-bras-java $HOME/bacalhao-a-bras-java
 
