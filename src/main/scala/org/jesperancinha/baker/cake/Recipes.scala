@@ -73,6 +73,7 @@ object Recipes {
       ))).orElse(null)
     }
   }
+
   def handleCookingTableForBatterSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
       Option.apply(new EventInstance(name = cookingTableDoneForBatter.name, providedIngredients = Map(
@@ -112,16 +113,23 @@ object Recipes {
     }
   }
 
-  val cutPodInHalf: Interaction = Interaction("Cut pods in half", Seq(greenBeansThreadRemoved), output = Seq(podsAreCutInHalf))
+  val cutPodInHalf: Interaction = Interaction("Cut pods in half",
+    Seq(greenBeansThreadRemoved),
+    output = Seq(podsAreCutInHalf))
 
   val cutPodsInHalfInstance: InteractionInstance = InteractionInstance(
     name = cutPodInHalf.name,
     input = Seq(CharArray),
-    run = handleCookBeans
+    run = handleCutInHalfPods
   )
 
+  def handleCutInHalfPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
+    Future {
+      Option.apply(new EventInstance(name = podsAreCutInHalf.name, providedIngredients = Map(halfPods.name -> PrimitiveValue("Half Pods")))).orElse(null)
+    }
+  }
+
   val cookBeans: Interaction = Interaction("Cook beans", Seq(halfPods), output = Seq(beansAreCooked))
-    .withRequiredEvent(podsAreCutInHalf)
 
   val cookBeansInstance: InteractionInstance = InteractionInstance(
     name = cookBeans.name,
@@ -131,12 +139,11 @@ object Recipes {
 
   def handleCookBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(new EventInstance(name = cookingTableDoneForBeans.name, providedIngredients = Map(cookedBeans.name -> PrimitiveValue("Cooked beans")))).orElse(null)
+      Option.apply(new EventInstance(name = beansAreCooked.name, providedIngredients = Map(cookedBeans.name -> PrimitiveValue("Cooked beans")))).orElse(null)
     }
   }
 
-  val drainBeans: Interaction = Interaction("Drain beans", Seq(drainedBeans), output = Seq(beansDrained))
-    .withRequiredEvent(beansAreCooked)
+  val drainBeans: Interaction = Interaction("Drain beans", Seq(cookedBeans), output = Seq(beansDrained))
 
   val drainBeansInstance: InteractionInstance = InteractionInstance(
     name = drainBeans.name,
@@ -168,7 +175,6 @@ object Recipes {
 
   val seasonBatter: Interaction = Interaction("Season Mix",
     Seq(batterWithEggs), output = Seq(mixIsSeasoned))
-    .withRequiredEvent(flowerWithEggsMixed)
 
   val seasonBatterInstance: InteractionInstance = InteractionInstance(
     name = seasonBatter.name,
@@ -201,7 +207,6 @@ object Recipes {
 
   val passPodsThroughBatter: Interaction = Interaction("Pass pods through batter",
     Seq(drainedBeans, batterWithColdWater), output = Seq(passedPodsThroughBatter))
-    .withRequiredEvents(moreColdWaterAdded, beansDrained)
 
   val passPodsThroughBatterInstance: InteractionInstance = InteractionInstance(
     name = passPodsThroughBatter.name,
@@ -211,13 +216,13 @@ object Recipes {
 
   def handlePassPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance(name = passedPodsThroughBatter.name)).orElse(null)
+      Option.apply(new EventInstance(name = passedPodsThroughBatter.name,
+        providedIngredients = Map(batteredPods.name -> PrimitiveValue("Pods with Batter")))).orElse(null)
     }
   }
 
   val fryPods: Interaction = Interaction("Fry pods",
     Seq(batteredPods), output = Seq(podsAreFried))
-    .withRequiredEvent(passedPodsThroughBatter)
 
   val fryPodsInstance: InteractionInstance = InteractionInstance(
     name = fryPods.name,
@@ -227,7 +232,8 @@ object Recipes {
 
   def handeFryPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      Option.apply(EventInstance(name = podsAreFried.name)).orElse(null)
+      Option.apply(new EventInstance(name = podsAreFried.name, providedIngredients =
+        Map(peixinhosDaHorta.name -> PrimitiveValue("Peixinhos da Horta")))).orElse(null)
     }
   }
 
