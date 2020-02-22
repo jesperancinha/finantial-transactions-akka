@@ -1,10 +1,35 @@
-# cake-maker
+# Baker portuguese recipes
+
+[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Baker%20portuguese%20recipes&color=informational)](https://github.com/jesperancinha/baker-portuguese-recipes) 
+[![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/baker-portuguese-recipes.svg)](#)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0db13a03e7a64e939196903eb7abf95d)](https://www.codacy.com/manual/jofisaes/baker-portuguese-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/baker-portuguese-recipes&amp;utm_campaign=Badge_Grade)
+[![CircleCI](https://circleci.com/gh/jesperancinha/baker-portuguese-recipes.svg?style=svg)](https://circleci.com/gh/jesperancinha/baker-portuguese-recipes)
+[![codebeat badge](https://codebeat.co/badges/f786d36a-1dc5-40b3-b59c-17518b85b4c3)](https://codebeat.co/projects/github-com-jesperancinha-baker-portuguese-recipes-master)[
+![Build Status](https://travis-ci.org/jesperancinha/baker-portuguese-recipes.svg?branch=master)](https://travis-ci.org/jesperancinha/baker-portuguese-recipes)
+[![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/baker-portuguese-recipes?branch=master)](https://bettercodehub.com/)
+[![Build status](https://ci.appveyor.com/api/projects/status/k2ukf8h95eys6npr?svg=true)](https://ci.appveyor.com/project/jesperancinha/baker-portuguese-recipes)
+[![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/baker-portuguese-recipes/badge.svg)](https://snyk.io/test/github/jesperancinha/baker-portuguese-recipes)
+
+[![GitHub language count](https://img.shields.io/github/languages/count/jesperancinha/baker-portuguese-recipes.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/baker-portuguese-recipes.svg)](#)
+[![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/baker-portuguese-recipes.svg)](#)
+
+
 
 ## Introduction
 
 Fellow colleagues at ING have developed the Baker project. In this project, we will examine its potential
 
-> This bakery does its best to be special. In this setup, the cake maker is a specialist in making portuguese snacks.
+> Welcome to portuguese restaurant: "O Petisco de Olhão".
+>
+> Feel free to choose a menu
+>
+> peixinhos-da-horta-scala - Peixinhos da Horta baked in Scala
+>
+> In this setup, our restaurant is a specialist in making portuguese snacks and main courses
+
 
 ## Status
 
@@ -27,6 +52,7 @@ Fellow colleagues at ING have developed the Baker project. In this project, we w
 ```bash
 apt -y install zip
 add-apt-repository ppa:webupd8team/java
+add-apt-repository ppa:linuxuprising/java
 apt-get update
 apt-get install oracle-java8-installer
 apt install openjdk-8-jdk

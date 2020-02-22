@@ -1,6 +1,6 @@
 scalaVersion := "2.12.4"
 
-name := "cake-maker"
+name := "peixinhos-da-horta-scala"
 organization := "org.jesperancinha.baker"
 version := "1.0"
 
