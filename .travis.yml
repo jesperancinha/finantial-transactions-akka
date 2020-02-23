@@ -3,7 +3,6 @@ jdk:
   - openjdk13
 services:
   - docker
-
 install:
   - docker build . -t portuguese-recipes-container
   - docker run portuguese-recipes-container

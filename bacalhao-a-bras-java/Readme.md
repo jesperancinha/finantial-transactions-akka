@@ -1,5 +1,15 @@
 # bacalhao-a-bras-java
 
+
+## References
+
+-   [TYPETAGS AND MANIFESTS](https://docs.scala-lang.org/overviews/reflection/typetags-manifests.html)
+-   [How to get the TypeTag for a class in Java](https://stackoverflow.com/questions/53037901/how-to-get-the-typetag-for-a-class-in-java)
+-   [Maven not building Scala project correctly](https://stackoverflow.com/questions/55721719/maven-not-building-scala-project-correctly)
+-   [Specifying a character encoding scheme](https://maven.apache.org/plugins/maven-resources-plugin/examples/encoding.html)
+-   [Maven compiler plugin](https://maven.apache.org/plugins/maven-compiler-plugin/plugin-info.html)
+-   [Scala Maven compiler plugin](https://davidb.github.io/scala-maven-plugin/example_java.html)
+
 ## About me
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social)](https://twitter.com/joaofse)
