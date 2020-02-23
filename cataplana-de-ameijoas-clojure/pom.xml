@@ -74,6 +74,33 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>4.3.1</version>
+                <executions>
+                    <execution>
+                        <id>compile1</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                    <execution>
+                        <id>test-compile1</id>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <phase>test-compile</phase>
+                    </execution>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.theoryinpractise</groupId>
                 <artifactId>clojure-maven-plugin</artifactId>
                 <version>1.8.3</version>
@@ -81,21 +108,16 @@
                 <configuration>
                     <script>./src/main/clojure/core.clj</script>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>scala-maven-plugin</artifactId>
-                <version>4.3.1</version>
                 <executions>
                     <execution>
-                        <id>compile</id>
+                        <id>compile2</id>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                         <phase>compile</phase>
                     </execution>
                     <execution>
-                        <id>test-compile</id>
+                        <id>test-compile2</id>
                         <goals>
                             <goal>testCompile</goal>
                         </goals>
