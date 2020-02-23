@@ -24,14 +24,25 @@ Fellow colleagues at ING have developed the Baker project. In this project, we w
 >
 > Feel free to choose a menu
 >
-> peixinhos-da-horta-scala - Peixinhos da Horta baked in Scala
+> peixinhos-da-horta-scala:
+> -   Peixinhos da Horta baked in Scala [![alt text](Documentation/pr-Scala-s.png "Scala")](./peixinhos-da-horta-scala)
+> 
+> ### bacalhao-a-bras-java:
+> -   Bacalhau à Brás baked in Java [![alt text](Documentation/pr-Java-s.png "Java")](./bacalhao-a-bras-java)
+> 
+> ### cataplana-de-ameijoas-clojure 
+> -   Cataplana baked in Clojure [![alt text](Documentation/pr-Clojure-s.png "Clojure")](./cataplana-de-ameijoas-clojure)
 >
-> In this setup, our restaurant is a specialist in making portuguese snacks and main courses
+> ### filhos-de-natal-kotlin 
+> -   Filhós de Natal baked in Kotlin [![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](./filhos-de-natal-kotlin)
+>
 
-[![alt text](Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
-[![alt text](Documentation/pr-Java.png "Java")](https://docs.oracle.com/javase/tutorial/java/index.html)
-[![alt text](Documentation/pr-Kotlin.png "Kotlin")](https://kotlinlang.org/)
-[![alt text](Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
+In this setup, our restaurant is a specialist in making portuguese snacks and main courses. Let's check the menu!
+
+[![alt text](Documentation/pr-Scala-s.png "Scala")](https://www.scala-lang.org/)
+[![alt text](Documentation/pr-Java-s.png "Java")](https://docs.oracle.com/javase/tutorial/java/index.html)
+[![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](https://kotlinlang.org/)
+[![alt text](Documentation/pr-Clojure-s.png "Clojure")](https://clojure.org/)
 
 ## Status
 
