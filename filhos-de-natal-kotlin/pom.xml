@@ -98,15 +98,13 @@
                 <version>4.3.1</version>
                 <executions>
                     <execution>
-                        <id>compile</id>
+                        <id>compile1</id>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                         <phase>compile</phase>
                         <configuration>
-                            <sourceDir>
-                                <source>src/main/scala</source>
-                            </sourceDir>
+                            <sourceDir>>src/main/scala</sourceDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -115,12 +113,18 @@
                             <goal>testCompile</goal>
                         </goals>
                         <phase>test-compile</phase>
+                        <configuration>
+                            <testSourceDir>src/test/scala</testSourceDir>
+                        </configuration>
                     </execution>
                     <execution>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>
+                        <configuration>
+                            <sourceDir>src/main/scala</sourceDir>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -130,8 +134,8 @@
                 <version>${kotlin.version}</version>
                 <executions>
                     <execution>
-                        <id>compile</id>
-                        <phase>process-sources</phase>
+                        <id>compile2</id>
+                        <phase>compile</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>
