@@ -16,6 +16,11 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/portuguese-recipes.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/portuguese-recipes.svg)](#)
 
+[![alt text](Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
+[![alt text](Documentation/pr-Java.png "Java")](https://docs.oracle.com/javase/tutorial/java/index.html)
+[![alt text](Documentation/pr-Kotlin.png "Kotlin")](https://kotlinlang.org/)
+[![alt text](Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
+
 
 
 ## Introduction
@@ -86,10 +91,6 @@ export SDKMAN_DIR="/root/.sdkman"
 apt -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-## Domain References
-
--   [Peixinhos da Horta by Vaqueiro](https://www.vaqueiro.pt/receitas/detalhe/1535/peixinhos-da-horta)
--   [BACALHAU À BRÁS (PORTUGUESE COD FISH À BRÁS)](https://easyportugueserecipes.com/bacalhau-a-bras-portuguese-cod-fish-a-bras/)
 
 ## References
 
@@ -103,6 +104,15 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 -   [How to Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
 -   [Oh My ZSH!](https://github.com/ohmyzsh/ohmyzsh/)
 -   [10 easy ways to speed up Windows 10](https://www.cnet.com/how-to/easy-ways-to-speed-up-windows-10/)
+-   [The Scala Profgramming Language](https://www.scala-lang.org/)
+-   [Oracle Store](https://shop.oracle.com/)
+-   [The Clojure Programming Language](https://clojure.org/)
+-   [Kotlin Programming Language](https://kotlinlang.org/)
+
+## Domain References
+
+-   [Peixinhos da Horta by Vaqueiro](https://www.vaqueiro.pt/receitas/detalhe/1535/peixinhos-da-horta)
+-   [BACALHAU À BRÁS (PORTUGUESE COD FISH À BRÁS)](https://easyportugueserecipes.com/bacalhau-a-bras-portuguese-cod-fish-a-bras/)
 
 ## About me
 
