@@ -89,6 +89,13 @@ apt -y install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+-   Lein
+
+```bash
+brew install leiningen
+lein lein new app cataplana-de-ameijoas-clojure
+```
+
 ## References
 
 -   [ING Baker](https://github.com/ing-bank/baker)
@@ -105,6 +112,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 -   [Oracle Store](https://shop.oracle.com/)
 -   [The Clojure Programming Language](https://clojure.org/)
 -   [Kotlin Programming Language](https://kotlinlang.org/)
+-   [Clojure for the Brave](https://www.braveclojure.com/getting-started/
 
 ## Domain References
 
