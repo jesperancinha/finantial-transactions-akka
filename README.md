@@ -123,7 +123,7 @@ lein lein new app cataplana-de-ameijoas-clojure
 -   [Oracle Store](https://shop.oracle.com/)
 -   [The Clojure Programming Language](https://clojure.org/)
 -   [Kotlin Programming Language](https://kotlinlang.org/)
--   [Clojure for the Brave](https://www.braveclojure.com/getting-started/
+-   [Clojure for the Brave](https://www.braveclojure.com/getting-started/)
 
 ## Domain References
 
