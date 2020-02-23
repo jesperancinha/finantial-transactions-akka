@@ -16,13 +16,6 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/jesperancinha/portuguese-recipes.svg)](#)
 [![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/portuguese-recipes.svg)](#)
 
-[![alt text](Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
-[![alt text](Documentation/pr-Java.png "Java")](https://docs.oracle.com/javase/tutorial/java/index.html)
-[![alt text](Documentation/pr-Kotlin.png "Kotlin")](https://kotlinlang.org/)
-[![alt text](Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
-
-
-
 ## Introduction
 
 Fellow colleagues at ING have developed the Baker project. In this project, we will examine its potential
@@ -35,6 +28,10 @@ Fellow colleagues at ING have developed the Baker project. In this project, we w
 >
 > In this setup, our restaurant is a specialist in making portuguese snacks and main courses
 
+[![alt text](Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
+[![alt text](Documentation/pr-Java.png "Java")](https://docs.oracle.com/javase/tutorial/java/index.html)
+[![alt text](Documentation/pr-Kotlin.png "Kotlin")](https://kotlinlang.org/)
+[![alt text](Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
 
 ## Status
 
