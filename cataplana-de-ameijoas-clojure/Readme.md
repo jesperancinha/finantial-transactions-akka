@@ -21,10 +21,16 @@ FIXME: listing of options this app accepts.
 
 ## Hints & Tricks
 
--   Setup Clojure
+-   Setup Clojure on a Mac
 ```bash
 brew install leiningen
 brew install clojure
+```
+
+-   Setup Clojure on Ubuntu
+```bash
+apt -y install leiningen
+apt -y install clojure
 ```
 
 -   Run Clojure via Maven
