@@ -52,3 +52,4 @@ FIXME: listing of options this app accepts.
 -   [Clojure Getting Started](https://clojure.org/guides/getting_started)
 -   [Clojure Deps and CLI](https://clojure.org/guides/deps_and_cli)
 -   [Cursive Plugin](https://plugins.jetbrains.com/plugin/8090-cursive)
+-   [Clojure and Java Interoperability`](http://clojure-doc.org/articles/language/interop.html)

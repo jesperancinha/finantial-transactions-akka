@@ -17,6 +17,18 @@ import java.util.Arrays;
 
 public class JBakerHelper {
 
+    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2, Ingredient ingredients3) {
+        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2, ingredients3), Option.empty());
+    }
+
+    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2) {
+        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2), Option.empty());
+    }
+
+    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient) {
+        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient), Option.empty());
+    }
+
     public static Ingredient createIngredient(String name) {
         return IngredientBuilder.creatIngredient(name);
     }

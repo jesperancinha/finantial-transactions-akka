@@ -16,7 +16,7 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!")
-  (def clams (JBakerHelper/createIngredient "500 g of clams"))
+  (def liveClams (JBakerHelper/createIngredient "500 g of clams"))
   (def mussels (JBakerHelper/createIngredient "500 g of mussels"))
   (def monkfish (JBakerHelper/createIngredient "400 g of monkfish loins"))
   (def squids (JBakerHelper/createIngredient "400 g of squid in rings"))
@@ -33,4 +33,6 @@
   (def water (JBakerHelper/createIngredient "5 dl water"))
   (def pepper (JBakerHelper/createIngredient "pepper"))
   (def prawns (JBakerHelper/createIngredient "500 g of prawns"))
+  (def salt (JBakerHelper/createIngredient "salt"))
+  (def liveClamsCleanup (JBakerHelper/createEvent "Live clams cleanup" liveClams salt water))
   )
