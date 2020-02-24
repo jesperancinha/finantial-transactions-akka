@@ -18,7 +18,7 @@
 
 ## Introduction
 
-Fellow colleagues at ING have developed the [Baker project](https://ing-bank.github.io/baker). In this project, we will examine its potential.
+Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker project](https://ing-bank.github.io/baker). In this project, we will examine its potential.
 
 > Welcome to portuguese restaurant: "O Petisco de Olhão".
 >
