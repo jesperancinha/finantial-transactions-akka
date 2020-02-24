@@ -20,6 +20,7 @@ public class Main {
         final Ingredient potatoStrips = createIngredient("4 potatoes in tiny strips");
         final Ingredient brownedPotatoes = createIngredient("Browned potatoes");
         final Ingredient codFish = createIngredient("18 ounces of cod fish");
+        final Ingredient codFishDippedInWater = createIngredient("Desalted cod fish");
         final Ingredient cookedCodFishLowHeat = createIngredient("Cooked cod Fish Low heat");
         final Ingredient boiledCodeFish = createIngredient("Boiled cod fish");
         final Ingredient skinnedCodFish = createIngredient("Skinned cod fish");
@@ -39,8 +40,10 @@ public class Main {
         final Ingredient mediumHeatCookedMix = createIngredient("Medium heat cooked mix with creamy eggs and Cod Fish");
         final Ingredient bacalhauABras = createIngredient("Bacalhau à Brás");
 
-        final Event potatosHaveBeenSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips));
+        final Event prepareGuestsDinner = Event.apply("The weekend is starting and I have to prepare dinner for my guests on Saturday", seq());
+
         final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(potatoStrips));
+        final Event potatosHaveBeenSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips));
         final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minuts", seq(boiledCodeFish));
         final Event skinCodFishEvent = Event.apply("Cod fish has been skinned", seq(skinnedCodFish));
         final Event boneCodFishEvent = Event.apply("Cod fish has been boned", seq(bonedCodFish));
@@ -54,8 +57,22 @@ public class Main {
         final Event mixedCookedOnMediumHeatEvent = Event.apply("Medium heat cooked mix", seq(mediumHeatCookedMix));
         final Event pourMixtureIntoServingDishEvent = Event.apply("Mix poured into serving dish with parsley", seq(bacalhauABras));
 
-        final Interaction interaction = createInteraction("Make it happen", potatoStrips, potatosHaveBeenSlicedEvent);
-        final Recipe bacalhauABrasRecipe = Recipe.apply("Bacalhau à Brás", seq(interaction), set(potatosHaveBeenSlicedEvent), null, Option.empty(), Option.empty());
+        final Interaction dippFishInWaterInteraction = createInteraction("Leave fish overnight in water", codFish, codFishRestedOvernightInWaterEvent)
+                .withRequiredEvent(prepareGuestsDinner);
+        final Interaction slicePotatoesInteraction = createInteraction("Slice potatoes", potatoes, potatosHaveBeenSlicedEvent);
+        final Interaction boilFishInteraction = createInteraction("Boil fish", codFishDippedInWater, boilFishEvent);
+        final Interaction skinFishInteraction = createInteraction("Skinned Fish", boiledCodeFish, skinCodFishEvent);
+        final Interaction boneFishInteraction = createInteraction("Bone fish", skinnedCodFish, boneCodFishEvent);
+        final Interaction deflakeFishInteraction = createInteraction("Deflake fish", bonedCodFish, deflakeCodFishEvent);
+        final Interaction coverSaucePanInteraction = createInteraction("Cover sauce pan", deflakedCodFish, coverSaucePanEvent);
+
+        final Recipe bacalhauABrasRecipe = Recipe
+                .apply("Bacalhau à Brás",
+                        seq(slicePotatoesInteraction),
+                        set(potatosHaveBeenSlicedEvent),
+                        null,
+                        Option.empty(),
+                        Option.empty());
 
         final CompiledRecipe compileRecipe = RecipeCompiler.compileRecipe(bacalhauABrasRecipe);
 
