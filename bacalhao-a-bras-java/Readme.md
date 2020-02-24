@@ -1,6 +1,10 @@
 # bacalhao-a-bras-java
 
 
+## Domain
+
+-   [Bacalhau à Brás (Portuguese Cod Fish à Brás)](https://easyportugueserecipes.com/bacalhau-a-bras-portuguese-cod-fish-a-bras/)
+
 ## References
 
 -   [TYPETAGS AND MANIFESTS](https://docs.scala-lang.org/overviews/reflection/typetags-manifests.html)
@@ -10,6 +14,16 @@
 -   [Maven compiler plugin](https://maven.apache.org/plugins/maven-compiler-plugin/plugin-info.html)
 -   [Scala Maven compiler plugin](https://davidb.github.io/scala-maven-plugin/example_java.html)
 
+## Have fun
+
+<div align="center">
+      <a href="https://www.youtube.com/watch?v=vCadcBR95oU">
+     <img 
+      src="https://img.youtube.com/vi/vCadcBR95oU/0.jpg" 
+      style="width:10%;">
+      </a>
+    </div>
+    
 ## About me
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social)](https://twitter.com/joaofse)

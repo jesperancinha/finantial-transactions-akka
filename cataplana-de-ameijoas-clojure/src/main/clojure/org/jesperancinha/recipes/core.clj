@@ -3,8 +3,7 @@
   (:import
     (org.jesperancinha.portuguese.recipes.bras IngredientBuilder)
     (org.jesperancinha.portuguese.recipes.bras JBakerHelper)
-    (org.joda.time DateTime)
-    (java.util Date)))
+    ))
 
 
 (defn create-ingredient
@@ -17,6 +16,6 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!")
-  (def test ( JBakerHelper/createIngredient "test"))
+  (def test (JBakerHelper/createIngredient "test"))
   (println test)
   )
