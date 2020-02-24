@@ -1,5 +1,7 @@
 # filhos-de-natal-kotlin
 
+[![alt text](../Documentation/pr-Kotlin.png "Kotlin")](https://kotlinlang.org/)
+
 ## About me
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/joaofse?label=João%20Esperancinha&style=social)](https://twitter.com/joaofse)

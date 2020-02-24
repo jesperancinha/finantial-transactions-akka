@@ -1,25 +1,10 @@
 # cataplana-de-ameijoas-clojure
 
-FIXME: description
+## Introduction
+
+[![alt text](../Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
 
 ## Installation
-
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar cataplana-de-ameijoas-clojure-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-## Hints & Tricks
 
 -   Setup Clojure on a Mac
 ```bash
@@ -41,6 +26,26 @@ mvn clojure:run
 -  Cursive Intellij plugin
     - For Intellij users it is one of the most important plugins to consider
         -   [Cursive Plugin](https://plugins.jetbrains.com/plugin/8090-cursive)
+
+## Usage
+
+```bash
+java -jar cataplana-de-ameijoas-clojure-0.1.0-standalone.jar [args]
+```
+
+## Options
+
+FIXME: listing of options this app accepts.
+
+## Examples
+
+...
+
+## Hints & Tricks
+
+## Domain language
+
+-   [Cataplana de marisco](https://www.vaqueiro.pt/receitas/detalhe/1248/cataplana-de-mariscos)
 
 ## References
 

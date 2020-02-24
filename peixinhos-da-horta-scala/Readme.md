@@ -1,5 +1,7 @@
 # peixinhos-da-horta-scala
 
+[![alt text](../Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
+
 ## References
 
 -   [Peixinhos da Horta by Vaqueiro](https://www.vaqueiro.pt/receitas/detalhe/1535/peixinhos-da-horta)
