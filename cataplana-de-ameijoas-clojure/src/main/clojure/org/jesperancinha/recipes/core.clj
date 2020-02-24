@@ -3,7 +3,7 @@
   (:import
     (org.jesperancinha.portuguese.recipes.bras IngredientBuilder)
     (org.jesperancinha.portuguese.recipes.bras JBakerHelper)
-    ))
+    (com.ing.baker.compiler RecipeCompiler)))
 
 
 (defn create-ingredient
@@ -41,8 +41,15 @@
   (def pepper (JBakerHelper/createIngredient "pepper"))
   (def prawns (JBakerHelper/createIngredient "500 g of prawns"))
   (def salt (JBakerHelper/createIngredient "salt"))
-  (def cataplanaWithOnions (JBakerHelper/createIngredient "cataplanaWithOnions"))
+  (def cataplanaWithOnions (JBakerHelper/createIngredient "Cataplana with onions"))
+  (def cataplanaWithSauteOnions (JBakerHelper/createIngredient "Cataplana with saute onions"))
+  (def cataplanaWithRedSeasoning (JBakerHelper/createIngredient "Cataplana with chili and peeled tomatoes"))
+  (def cataplanaLowHeat15Cooked (JBakerHelper/createIngredient "Cooked for 15 minutes"))
+  (def cataplanaWithSmashedTomato (JBakerHelper/createIngredient "Post cook smashed tomato"))
+  (def cataplanaLowHeat10CookedWithExtraSeasoning (JBakerHelper/createIngredient "Cooked for 10 minutes with extra seasoning"))
+  (def cataplanaDeAmeijoas (JBakerHelper/createIngredient "Cooked for 15 to 20  minutes with seaFood"))
 
+  (def fisherManComesToFamily (JBakerHelper/createEvent "Fisherman caught a bunch of sea food" liveClams mussels monkfish))
   (def liveClamsCleanupEvent (JBakerHelper/createEvent "Live clams cleanup" washedClams))
   (def brushMusselsEvent (JBakerHelper/createEvent "Brushed live mussels" brushedMussels))
   (def scrappedMusselsEvent (JBakerHelper/createEvent "Scrapped mussels" scrappedMussels))
@@ -51,4 +58,16 @@
   (def peelOnionsEvent (JBakerHelper/createEvent "Peeled onions" peeledOnions))
   (def slicedOnionsEvent (JBakerHelper/createEvent "Sliced onions" slicedOnions))
   (def onionsInCataplanaEvent (JBakerHelper/createEvent "Onions in Cataplana" cataplanaWithOnions))
+  (def lightBakingSauteEvent (JBakerHelper/createEvent "Baked with Margarine and Olive oil" cataplanaWithSauteOnions))
+  (def seasoningInRedEvent (JBakerHelper/createEvent "Seasoning with chili and peeled tomato" cataplanaWithRedSeasoning))
+  (def low15MinuteCookEvent (JBakerHelper/createEvent "Cooked for 15 minutes in a closed lid" cataplanaLowHeat15Cooked))
+  (def mashupMixInCataplanaEvent (JBakerHelper/createEvent "Seasoning with chili and peeled tomato" cataplanaWithSmashedTomato))
+  (def low10MinuteCookMixEvent (JBakerHelper/createEvent "Cooked further for 10 minutes with seaoned mix" cataplanaLowHeat10CookedWithExtraSeasoning))
+  (def low15MinuteCookWithSeaFood (JBakerHelper/createEvent "Cooked further for 15 to 20 minutes with sea food" cataplanaDeAmeijoas))
+  (def cleaningLiveClamsInteraction (JBakerHelper/createInteraction "Washing up clams" liveClams liveClamsCleanupEvent))
+  (.withRequiredEvent cleaningLiveClamsInteraction fisherManComesToFamily)
+  (def recipe (JBakerHelper/createRecipe "Cataplana de ameijoas" cleaningLiveClamsInteraction fisherManComesToFamily))
+  (def compiledRecipe (RecipeCompiler/compileRecipe recipe))
+  (def result (.getRecipeVisualization compiledRecipe))
+  (println result )
   )

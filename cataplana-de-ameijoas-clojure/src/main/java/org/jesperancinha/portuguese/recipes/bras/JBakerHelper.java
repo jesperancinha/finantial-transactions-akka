@@ -4,6 +4,7 @@ import com.ing.baker.recipe.common.Event;
 import com.ing.baker.recipe.common.EventOutputTransformer;
 import com.ing.baker.recipe.common.Ingredient;
 import com.ing.baker.recipe.scaladsl.Interaction;
+import com.ing.baker.recipe.scaladsl.Recipe;
 import com.ing.baker.types.Value;
 import scala.Option;
 import scala.collection.JavaConverters;
@@ -61,10 +62,13 @@ public class JBakerHelper {
         return JavaConverters.asScalaBuffer(Arrays.asList(ingredient)).toSet();
     }
 
-    public static Interaction createInteraction(String name, Ingredient ingredient, Event event) {
+    public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Event event) {
+        return createInteraction(name, seq(ingredient1, ingredient2, ingredient3), seq(event));
+    }
+    public static Interaction createInteraction(String name, Seq<Ingredient> ingredients, Seq<Event> events) {
         return Interaction.apply(
-                name, seq(ingredient),
-                seq(event), setEmptyString(),
+                name, ingredients,
+                events, setEmptyString(),
                 setOfSetEmptyString(),
                 mapOfEmptyValue(),
                 mapOfEmptyString(),
@@ -73,5 +77,32 @@ public class JBakerHelper {
                 Option.empty(),
                 mapOfEmptyCommonEvent(),
                 Option.empty());
+    }
+
+    public static Interaction createInteraction(String name, Ingredient ingredient, Event event) {
+        return Interaction.apply(
+                name,
+                seq(ingredient),
+                seq(event),
+                setEmptyString(),
+                setOfSetEmptyString(),
+                mapOfEmptyValue(),
+                mapOfEmptyString(),
+                Option.empty(),
+                Option.empty(),
+                Option.empty(),
+                mapOfEmptyCommonEvent(),
+                Option.empty());
+    }
+
+    public static Recipe createRecipe(String recipeName, Interaction interaction1, Event event1){
+        return Recipe
+                .apply(recipeName,
+                        seq(interaction1),
+                        set(event1),
+                        null,
+                        Option.empty(),
+                        Option.empty());
+
     }
 }
