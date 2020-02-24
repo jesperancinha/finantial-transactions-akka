@@ -39,13 +39,14 @@ public class Main {
         final Ingredient saucePanCovered = createIngredient("Sauce pan");
         final Ingredient mediumHeatCookedMix = createIngredient("Medium heat cooked mix with creamy eggs and Cod Fish");
         final Ingredient bacalhauABras = createIngredient("Bacalhau à Brás");
+        final Ingredient bacalhauABrasCoveredWithBlackOlives = createIngredient("Bacalhau à Brás covered with black olives");
 
         final Event prepareGuestsDinner = Event.apply("The weekend is starting and I have to prepare dinner for my guests on Saturday", seq());
 
         final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(potatoStrips));
         final Event onionsHaveBeednSlicedEvent = Event.apply("Onions have been sliced", seq(oneSlicedOnion));
         final Event potatosHaveBeednSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips));
-        final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minuts", seq(boiledCodeFish));
+        final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minutes", seq(boiledCodeFish));
         final Event skinCodFishEvent = Event.apply("Cod fish has been skinned", seq(skinnedCodFish));
         final Event boneCodFishEvent = Event.apply("Cod fish has been boned", seq(bonedCodFish));
         final Event deflakeCodFishEvent = Event.apply("Cod fish has been deflaked", seq(deflakedCodFish));
@@ -57,24 +58,42 @@ public class Main {
         final Event eggsAddedToThePanEvent = Event.apply("Cod fish with beaten eggs", seq(codFishWithEggs));
         final Event mixedCookedOnMediumHeatEvent = Event.apply("Medium heat cooked mix", seq(mediumHeatCookedMix));
         final Event pourMixtureIntoServingDishEvent = Event.apply("Mix poured into serving dish with parsley", seq(bacalhauABras));
+        final Event decorateWithOlivesEvent = Event.apply("Decorate with black olives", seq(bacalhauABrasCoveredWithBlackOlives));
+        final Event cuttingOnionsEvent = Event.apply("Decorate with black olives", seq(oneSlicedOnion));
 
         final Interaction dippFishInWaterInteraction = createInteraction("Leave fish overnight in water", codFish, codFishRestedOvernightInWaterEvent)
                 .withRequiredEvent(prepareGuestsDinner);
-        final Interaction slicePotatoesInteraction = createInteraction("Slice potatoes", potatoes, potatosHaveBeednSlicedEvent);
-        final Interaction sliceOnionsInteraction = createInteraction("Slice onions", oneOnion, onionsHaveBeednSlicedEvent);
-        final Interaction boilFishInteraction = createInteraction("Boil fish", codFishDippedInWater, boilFishEvent);
+        final Interaction boilFishInteraction = createInteraction("Boil fish", codFishDippedInWater, boilFishEvent)
+                .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+        final Interaction slicePotatoesInteraction = createInteraction("Slice potatoes", potatoes, potatosHaveBeednSlicedEvent)
+                .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+        final Interaction sliceOnionsInteraction = createInteraction("Slice onions", oneOnion, onionsHaveBeednSlicedEvent)
+                .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+
         final Interaction skinFishInteraction = createInteraction("Skinned Fish", boiledCodeFish, skinCodFishEvent);
         final Interaction boneFishInteraction = createInteraction("Bone fish", skinnedCodFish, boneCodFishEvent);
         final Interaction deflakeFishInteraction = createInteraction("Deflake fish", bonedCodFish, deflakeCodFishEvent);
         final Interaction coverSaucePanInteraction = createInteraction("Cover sauce pan", seq(oneSlicedOnion, halfCupOliveOil), seq(coverSaucePanEvent));
         final Interaction sauteOnionsInteraction = createInteraction("Saute Onions", saucePanCovered, sauteOnionsEvent);
         final Interaction addThinPotatoesInteraction = createInteraction("Golden brown thin potatoes", seq(sautedOnions, potatoStrips), seq(goldenBrownPotatoesEvent));
-        final Interaction cookCodFishInteraction  = createInteraction("Cook cod fish low heat", seq(goldenbrownedPotatoes), seq(cookCodFishLowHeatEvent));
+        final Interaction cookCodFishInteraction = createInteraction("Cook cod fish low heat", seq(goldenbrownedPotatoes, deflakedCodFish), seq(cookCodFishLowHeatEvent));
+        final Interaction beatEggsInteractions = createInteraction("Beat eggs", seq(eggs, milkTeaSpoon, saltNPepper), seq(beatEggsEvent))
+                .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+        final Interaction eggsAddedToPanInteraction = createInteraction("Cover cod fish with beaten eggs", seq(beatenEggs, cookedCodFishLowHeat), seq(eggsAddedToThePanEvent));
+        final Interaction mixCookingOnMediumHeatInteraction = createInteraction("Cook mix on medium heat", codFishWithEggs, mixedCookedOnMediumHeatEvent);
+        final Interaction pourMixOverDishInteraction = createInteraction("Pour mix over plate", mediumHeatCookedMix, pourMixtureIntoServingDishEvent);
+        final Interaction decorateDish = createInteraction("Decorate with black olives", bacalhauABras, decorateWithOlivesEvent);
 
         final Recipe bacalhauABrasRecipe = Recipe
                 .apply("Bacalhau à Brás",
-                        seq(slicePotatoesInteraction),
-                        set(potatosHaveBeednSlicedEvent),
+                        seq(dippFishInWaterInteraction,
+                                slicePotatoesInteraction, sliceOnionsInteraction, boilFishInteraction,
+                                skinFishInteraction, boneFishInteraction, deflakeFishInteraction,
+                                coverSaucePanInteraction, sauteOnionsInteraction, addThinPotatoesInteraction,
+                                cookCodFishInteraction, beatEggsInteractions, eggsAddedToPanInteraction,
+                                mixCookingOnMediumHeatInteraction, pourMixOverDishInteraction,
+                                decorateDish),
+                        set(prepareGuestsDinner),
                         null,
                         Option.empty(),
                         Option.empty());
