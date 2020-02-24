@@ -22,19 +22,15 @@ Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker projec
 
 > Welcome to portuguese restaurant: "O Petisco de Olhão".
 >
-> Feel free to choose a menu
+> Feel free to choose a menu:
 >
-> ### peixinhos-da-horta-scala:
-> -   Peixinhos da Horta baked in Scala [![alt text](Documentation/pr-Scala-s.png "Scala")](./peixinhos-da-horta-scala)
-> 
-> ### bacalhao-a-bras-java:
-> -   Bacalhau à Brás baked in Java [![alt text](Documentation/pr-Java-s.png "Java")](./bacalhao-a-bras-java)
-> 
-> ### cataplana-de-ameijoas-clojure 
-> -   Cataplana de ameijoas baked in Clojure [![alt text](Documentation/pr-Clojure-s.png "Clojure")](./cataplana-de-ameijoas-clojure)
+> | Project                       | Description                            | Language                                                                                -|
+> |-------------------------------|----------------------------------------|------------------------------------------------------------------------------------------|
+> | peixinhos-da-horta-scala      | Peixinhos da Horta baked in Scala      | [![alt text](Documentation/pr-Scala-s.png "Scala")](./peixinhos-da-horta-scala)          |
+> | bacalhao-a-bras-java          | Bacalhau à Brás baked in Java          | [![alt text](Documentation/pr-Java-s.png "Java")](./bacalhao-a-bras-java)                |
+> | cataplana-de-ameijoas-clojure | Cataplana de ameijoas baked in Clojure | [![alt text](Documentation/pr-Clojure-s.png "Clojure")](./cataplana-de-ameijoas-clojure) |
+> | filhos-de-natal-kotlin        | Filhós de Natal baked in Kotlin        | [![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](./filhos-de-natal-kotlin)          |
 >
-> ### filhos-de-natal-kotlin 
-> -   Filhós de Natal baked in Kotlin [![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](./filhos-de-natal-kotlin)
 >
 
 In this setup, our restaurant is a specialist in making portuguese snacks and main courses. Let's check the menu!
