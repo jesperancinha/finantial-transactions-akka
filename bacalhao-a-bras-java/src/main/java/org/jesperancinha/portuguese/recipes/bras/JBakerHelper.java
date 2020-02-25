@@ -4,6 +4,8 @@ import com.ing.baker.recipe.common.Event;
 import com.ing.baker.recipe.common.EventOutputTransformer;
 import com.ing.baker.recipe.common.Ingredient;
 import com.ing.baker.recipe.scaladsl.Interaction;
+import com.ing.baker.runtime.javadsl.EventInstance;
+import com.ing.baker.runtime.javadsl.InteractionInstance;
 import com.ing.baker.types.Value;
 import scala.Option;
 import scala.collection.JavaConverters;
@@ -14,6 +16,8 @@ import scala.collection.immutable.Map;
 import scala.collection.immutable.Set;
 
 import java.util.Arrays;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 public class JBakerHelper {
 
@@ -77,5 +81,11 @@ public class JBakerHelper {
                 Option.empty(),
                 mapOfEmptyCommonEvent(),
                 Option.empty());
+    }
+
+    public static InteractionInstance createInteractionInstance(
+            String name, Integer elementNumber,
+            CompletableFuture<Optional<EventInstance>> future){
+        return IngredientBuilder.createIteraction(name, elementNumber, future);
     }
 }
