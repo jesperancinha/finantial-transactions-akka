@@ -19,12 +19,8 @@ import java.util.List;
 
 public class JBakerHelper {
 
-    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2, Ingredient ingredients3, Ingredient ingredients4) {
-        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2, ingredients3, ingredients4), Option.empty());
-    }
-
-    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2, Ingredient ingredients3) {
-        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2, ingredients3), Option.empty());
+    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, List<Ingredient> ingredients) {
+        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredients), Option.empty());
     }
 
     public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2) {
@@ -39,8 +35,12 @@ public class JBakerHelper {
         return IngredientBuilder.creatIngredient(name);
     }
 
-    public static <T> Seq<T> seq(T... ingredient) {
-        return JavaConverters.asScalaBuffer(Arrays.asList(ingredient)).toSeq();
+    public static <T> Seq<T> seq(List<T> elements) {
+        return JavaConverters.asScalaBuffer(elements).toSeq();
+    }
+
+    public static <T> Seq<T> seq(T... elements) {
+        return JavaConverters.asScalaBuffer(Arrays.asList(elements)).toSeq();
     }
 
     public static Set<String> setEmptyString() {
@@ -67,12 +67,24 @@ public class JBakerHelper {
         return JavaConverters.asScalaBuffer(Arrays.asList(ingredient)).toSet();
     }
 
+    public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Ingredient ingredient4, Event event) {
+        return createInteraction(name, seq(ingredient1, ingredient2, ingredient3, ingredient4), seq(event));
+    }
+
     public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Event event) {
         return createInteraction(name, seq(ingredient1, ingredient2, ingredient3), seq(event));
     }
 
     public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Event event) {
         return createInteraction(name, seq(ingredient1, ingredient2), seq(event));
+    }
+
+    public static Interaction createInteraction(String name, List<Ingredient> ingredients, List<Event> events) {
+        return createInteraction(name, seq(ingredients), seq(events));
+    }
+
+    public static Interaction createInteraction(String name, List<Ingredient> ingredients, Event event) {
+        return createInteraction(name, seq(ingredients), seq(event));
     }
 
     private static Interaction createInteraction(String name, Seq<Ingredient> ingredients, Seq<Event> events) {
