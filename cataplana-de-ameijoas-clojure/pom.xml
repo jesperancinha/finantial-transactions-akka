@@ -16,7 +16,7 @@
         <clojure.version>1.10.0</clojure.version>
         <scala-maven-plugin.version>4.3.1</scala-maven-plugin.version>
         <clojure-maven-plugin.version>1.8.3</clojure-maven-plugin.version>
-        <maven-compiler-plugin.source>1.8</maven-compiler-plugin.source>
+        <maven-compiler-plugin.source>${maven-compiler-plugin.target}</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>

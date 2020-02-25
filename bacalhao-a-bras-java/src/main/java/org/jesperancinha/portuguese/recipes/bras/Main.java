@@ -16,6 +16,10 @@ import static org.jesperancinha.portuguese.recipes.bras.JBakerHelper.set;
 
 public class Main {
     public static void main(String[] args) {
+        createBacalhauABrasRecipe();
+    }
+
+    public static CompiledRecipe createBacalhauABrasRecipe() {
         final Ingredient potatoes = createIngredient("4 potatoes");
         final Ingredient potatoStrips = createIngredient("4 potatoes in tiny strips");
         final Ingredient goldenbrownedPotatoes = createIngredient("Browned potatoes");
@@ -98,8 +102,6 @@ public class Main {
                         Option.empty(),
                         Option.empty());
 
-        final CompiledRecipe compileRecipe = RecipeCompiler.compileRecipe(bacalhauABrasRecipe);
-
-        System.out.println(compileRecipe.getRecipeVisualization());
+       return RecipeCompiler.compileRecipe(bacalhauABrasRecipe);
     }
 }
