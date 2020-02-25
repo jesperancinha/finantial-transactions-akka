@@ -66,19 +66,30 @@ public class Recipe {
     final Interaction sliceOnionsInteraction = createInteraction("Slice onions", oneOnion, onionsHaveBeednSlicedEvent)
             .withRequiredEvent(codFishRestedOvernightInWaterEvent);
 
-    final Interaction skinFishInteraction = createInteraction("Skinned Fish", boiledCodFish, skinCodFishEvent);
-    final Interaction boneFishInteraction = createInteraction("Bone fish", skinnedCodFish, boneCodFishEvent);
-    final Interaction deflakeFishInteraction = createInteraction("Deflake fish", bonedCodFish, deflakeCodFishEvent);
-    final Interaction coverSaucePanInteraction = createInteraction("Cover sauce pan", seq(oneSlicedOnion, halfCupOliveOil), seq(coverSaucePanEvent));
-    final Interaction sauteOnionsInteraction = createInteraction("Saute Onions", saucePanCovered, sauteOnionsEvent);
-    final Interaction addThinPotatoesInteraction = createInteraction("Golden brown thin potatoes", seq(sautedOnions, potatoStrips), seq(goldenBrownPotatoesEvent));
-    final Interaction cookCodFishInteraction = createInteraction("Cook cod fish low heat", seq(goldenbrownedPotatoes, deflakedCodFish), seq(cookCodFishLowHeatEvent));
+    final Interaction skinFishInteraction = createInteraction("Skinned Fish", boiledCodFish, skinCodFishEvent)
+            .withRequiredEvent(boilFishEvent);
+    final Interaction boneFishInteraction = createInteraction("Bone fish", skinnedCodFish, boneCodFishEvent)
+            .withRequiredEvent(skinCodFishEvent);
+    final Interaction deflakeFishInteraction = createInteraction("Deflake fish", bonedCodFish, deflakeCodFishEvent)
+            .withRequiredEvent(boneCodFishEvent);
+    final Interaction coverSaucePanInteraction = createInteraction("Cover sauce pan", seq(oneSlicedOnion, halfCupOliveOil), seq(coverSaucePanEvent))
+            .withRequiredEvent(deflakeCodFishEvent);
+    final Interaction sauteOnionsInteraction = createInteraction("Saute Onions", saucePanCovered, sauteOnionsEvent)
+            .withRequiredEvent(coverSaucePanEvent);
+    final Interaction addThinPotatoesInteraction = createInteraction("Golden brown thin potatoes", seq(sautedOnions, potatoStrips), seq(goldenBrownPotatoesEvent))
+            .withRequiredEvent(sauteOnionsEvent);
+    final Interaction cookCodFishInteraction = createInteraction("Cook cod fish low heat", seq(goldenbrownedPotatoes, deflakedCodFish), seq(cookCodFishLowHeatEvent))
+            .withRequiredEvent(goldenBrownPotatoesEvent);
     final Interaction beatEggsInteraction = createInteraction("Beat eggs", seq(eggs, milkTeaSpoon, saltNPepper), seq(beatEggsEvent))
-            .withRequiredEvent(codFishRestedOvernightInWaterEvent);
-    final Interaction eggsAddedToPanInteraction = createInteraction("Cover cod fish with beaten eggs", seq(beatenEggs, cookedCodFishLowHeat), seq(eggsAddedToThePanEvent));
-    final Interaction mixCookingOnMediumHeatInteraction = createInteraction("Cook mix on medium heat", codFishWithEggs, mixedCookedOnMediumHeatEvent);
-    final Interaction pourMixOverDishInteraction = createInteraction("Pour mix over plate", mediumHeatCookedMix, pourMixtureIntoServingDishEvent);
-    final Interaction decorateDishInteraction = createInteraction("Decorate with black olives", bacalhauABras, decorateWithOlivesEvent);
+            .withRequiredEvent(cookCodFishLowHeatEvent);
+    final Interaction eggsAddedToPanInteraction = createInteraction("Cover cod fish with beaten eggs", seq(beatenEggs, cookedCodFishLowHeat), seq(eggsAddedToThePanEvent))
+            .withRequiredEvent(beatEggsEvent);
+    final Interaction mixCookingOnMediumHeatInteraction = createInteraction("Cook mix on medium heat", codFishWithEggs, mixedCookedOnMediumHeatEvent)
+            .withRequiredEvent(eggsAddedToThePanEvent);
+    final Interaction pourMixOverDishInteraction = createInteraction("Pour mix over plate", mediumHeatCookedMix, pourMixtureIntoServingDishEvent)
+            .withRequiredEvent(mixedCookedOnMediumHeatEvent);
+    final Interaction decorateDishInteraction = createInteraction("Decorate with black olives", bacalhauABras, decorateWithOlivesEvent)
+            .withRequiredEvent(pourMixtureIntoServingDishEvent);
 
 
     final com.ing.baker.recipe.javadsl.Recipe bacalhauABrasRecipe = com.ing.baker.recipe.javadsl.Recipe
