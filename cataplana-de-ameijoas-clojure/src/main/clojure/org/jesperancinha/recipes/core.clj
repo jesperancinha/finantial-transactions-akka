@@ -3,7 +3,8 @@
   (:import
     (org.jesperancinha.portuguese.recipes.bras IngredientBuilder)
     (org.jesperancinha.portuguese.recipes.bras JBakerHelper)
-    (com.ing.baker.compiler RecipeCompiler)))
+    (com.ing.baker.compiler RecipeCompiler)
+    (java.util ArrayList)))
 
 
 (defn create-ingredient
@@ -22,9 +23,10 @@
   (def scrappedMussels (JBakerHelper/createIngredient "Scrapped mussels"))
   (def washedMussels (JBakerHelper/createIngredient "Washed mussels"))
   (def mussels (JBakerHelper/createIngredient "500 g of mussels"))
-  (def monkfish (JBakerHelper/createIngredient "400 g of monkfish loins"))
-  (def defrostedMonkFish (JBakerHelper/createIngredient "Defrosted monk fish"))
-  (def squids (JBakerHelper/createIngredient "400 g of squid in rings"))
+  (def monkfish (JBakerHelper/createIngredient "400 g of frozen monkfish loins"))
+  (def defrostedMonkFish (JBakerHelper/createIngredient "Thawed monk fish"))
+  (def squids (JBakerHelper/createIngredient "400 g of frozen squid in rings"))
+  (def squidsThawed (JBakerHelper/createIngredient "400 g of frozen squid in rings"))
   (def onions (JBakerHelper/createIngredient "2 onions"))
   (def peeledOnions (JBakerHelper/createIngredient "Peeled onions"))
   (def slicedOnions (JBakerHelper/createIngredient "Peeled onions"))
@@ -49,12 +51,12 @@
   (def cataplanaLowHeat10CookedWithExtraSeasoning (JBakerHelper/createIngredient "Cooked for 10 minutes with extra seasoning"))
   (def cataplanaDeAmeijoas (JBakerHelper/createIngredient "Cooked for 15 to 20  minutes with seaFood"))
 
-  (def fisherManComesToFamilyEvent (JBakerHelper/createEvent "Fisherman caught a bunch of sea food" liveClams mussels monkfish))
+  (def fisherManComesToFamilyEvent (JBakerHelper/createEvent "Fisherman caught a bunch of sea food and went shopping" liveClams mussels monkfish onions))
   (def liveClamsCleanupEvent (JBakerHelper/createEvent "Live clams cleanup" washedClams))
   (def brushMusselsEvent (JBakerHelper/createEvent "Brushed live mussels" brushedMussels))
   (def scrappedMusselsEvent (JBakerHelper/createEvent "Scrapped mussels" scrappedMussels))
   (def washedMusselsEvent (JBakerHelper/createEvent "Washed mussels" washedMussels))
-  (def defrostMonkFishEvent (JBakerHelper/createEvent "Defrost monk fish" defrostedMonkFish))
+  (def defrostMonkFishEvent (JBakerHelper/createEvent "Thaw monk fish" defrostedMonkFish, squidsThawed))
   (def peelOnionsEvent (JBakerHelper/createEvent "Peeled onions" peeledOnions))
   (def slicedOnionsEvent (JBakerHelper/createEvent "Sliced onions" slicedOnions))
   (def onionsInCataplanaEvent (JBakerHelper/createEvent "Onions in Cataplana" cataplanaWithOnions))
@@ -67,10 +69,28 @@
   (def cleaningLiveClamsInteraction (JBakerHelper/createInteraction "Washing up clams" liveClams liveClamsCleanupEvent))
   (.withRequiredEvent cleaningLiveClamsInteraction fisherManComesToFamilyEvent)
   (def brushMusselsInteraction (JBakerHelper/createInteraction "Brush Mussels" washedClams, brushMusselsEvent))
-  (def recipeIteractions (java.util.ArrayList. [cleaningLiveClamsInteraction, brushMusselsInteraction]))
-  (def recipeEvents (java.util.ArrayList. [fisherManComesToFamilyEvent]))
+  (def scrappedMusselsInteraction (JBakerHelper/createInteraction "Scrape Mussels" brushedMussels, scrappedMusselsEvent))
+  (def washMusselsInteraction (JBakerHelper/createInteraction "Wash Mussels" scrappedMussels, washedMusselsEvent))
+  (def thawSeaFoodInteraction (JBakerHelper/createInteraction "Thaw sea food" monkfish squidsThawed defrostMonkFishEvent))
+  (.withRequiredEvent thawSeaFoodInteraction fisherManComesToFamilyEvent)
+  (def peelOnionsInteraction (JBakerHelper/createInteraction "Peel onions" onions peelOnionsEvent))
+  (.withRequiredEvent peelOnionsInteraction fisherManComesToFamilyEvent)
+  (def sliceOnionsInteraction (JBakerHelper/createInteraction "Slice onions" peeledOnions slicedOnionsEvent))
+  (def onionsInCataplanaInteraction (JBakerHelper/createInteraction "Dumping onion in cataplana" slicedOnions onionsInCataplanaEvent))
+  (def lightBakingSauteInteraction (JBakerHelper/createInteraction "Sauteing with margarine and olive oil", cataplanaWithOnions, lightBakingSauteEvent))
+  (def seasonCataplanInteraction (JBakerHelper/createInteraction "Seasoning the cataplana", cataplanaWithSauteOnions, seasoningInRedEvent))
+  (def low15MinuteCookingInteraction (JBakerHelper/createInteraction "15 minutes on low heat", cataplanaWithRedSeasoning, low15MinuteCookEvent))
+  (def mashupMixInCataplanaInteraction (JBakerHelper/createInteraction "Mashup mixing ingredients in cataplana pan", cataplanaLowHeat15Cooked, mashupMixInCataplanaEvent))
+  (def recipeIteractions (ArrayList.
+                           [cleaningLiveClamsInteraction, brushMusselsInteraction,
+                            scrappedMusselsInteraction, washMusselsInteraction,
+                            thawSeaFoodInteraction, peelOnionsInteraction,
+                            sliceOnionsInteraction, onionsInCataplanaInteraction,
+                            lightBakingSauteInteraction, seasonCataplanInteraction,
+                            low15MinuteCookingInteraction, mashupMixInCataplanaInteraction]))
+  (def recipeEvents (ArrayList. [fisherManComesToFamilyEvent]))
   (def recipe (JBakerHelper/createRecipe "Cataplana de ameijoas" recipeIteractions recipeEvents))
   (def compiledRecipe (RecipeCompiler/compileRecipe recipe))
   (def result (.getRecipeVisualization compiledRecipe))
-  (println result )
+  (println result)
   )

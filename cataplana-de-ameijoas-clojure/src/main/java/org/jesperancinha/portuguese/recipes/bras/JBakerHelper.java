@@ -19,6 +19,10 @@ import java.util.List;
 
 public class JBakerHelper {
 
+    public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2, Ingredient ingredients3, Ingredient ingredients4) {
+        return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2, ingredients3, ingredients4), Option.empty());
+    }
+
     public static com.ing.baker.recipe.scaladsl.Event createEvent(String name, Ingredient ingredient1, Ingredient ingredients2, Ingredient ingredients3) {
         return new com.ing.baker.recipe.scaladsl.Event(name, seq(ingredient1, ingredients2, ingredients3), Option.empty());
     }
@@ -67,7 +71,11 @@ public class JBakerHelper {
         return createInteraction(name, seq(ingredient1, ingredient2, ingredient3), seq(event));
     }
 
-    public static Interaction createInteraction(String name, Seq<Ingredient> ingredients, Seq<Event> events) {
+    public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Event event) {
+        return createInteraction(name, seq(ingredient1, ingredient2), seq(event));
+    }
+
+    private static Interaction createInteraction(String name, Seq<Ingredient> ingredients, Seq<Event> events) {
         return Interaction.apply(
                 name, ingredients,
                 events, setEmptyString(),
