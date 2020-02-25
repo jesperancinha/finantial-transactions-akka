@@ -41,9 +41,10 @@ public class Main {
         final Ingredient bacalhauABras = createIngredient("Bacalhau à Brás");
         final Ingredient bacalhauABrasCoveredWithBlackOlives = createIngredient("Bacalhau à Brás covered with black olives");
 
-        final Event prepareGuestsDinner = Event.apply("The weekend is starting and I have to prepare dinner for my guests on Saturday", seq());
+        final Event prepareGuestsDinner = Event.apply("The weekend is starting and I have to prepare dinner for my guests on Saturday",
+                seq(codFish, milkTeaSpoon, saltNPepper, eggs, potatoes, oneOnion, blackOlives, halfCupOliveOil));
 
-        final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(potatoStrips));
+        final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(codFishDippedInWater));
         final Event onionsHaveBeednSlicedEvent = Event.apply("Onions have been sliced", seq(oneSlicedOnion));
         final Event potatosHaveBeednSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips));
         final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minutes", seq(boiledCodeFish));
@@ -55,11 +56,10 @@ public class Main {
         final Event goldenBrownPotatoesEvent = Event.apply("Potatoes have been golden browned", seq(goldenbrownedPotatoes));
         final Event cookCodFishLowHeatEvent = Event.apply("Cod fish has been cooked in low heat", seq(cookedCodFishLowHeat));
         final Event beatEggsEvent = Event.apply("Eggs have been beaten", seq(beatenEggs));
-        final Event eggsAddedToThePanEvent = Event.apply("Cod fish with beaten eggs", seq(codFishWithEggs));
+        final Event eggsAddedToThePanEvent = Event.apply("Cod fish has been mixed with beaten eggs", seq(codFishWithEggs));
         final Event mixedCookedOnMediumHeatEvent = Event.apply("Medium heat cooked mix", seq(mediumHeatCookedMix));
         final Event pourMixtureIntoServingDishEvent = Event.apply("Mix poured into serving dish with parsley", seq(bacalhauABras));
-        final Event decorateWithOlivesEvent = Event.apply("Decorate with black olives", seq(bacalhauABrasCoveredWithBlackOlives));
-        final Event cuttingOnionsEvent = Event.apply("Decorate with black olives", seq(oneSlicedOnion));
+        final Event decorateWithOlivesEvent = Event.apply("Decorated with black olives", seq(bacalhauABrasCoveredWithBlackOlives));
 
         final Interaction dippFishInWaterInteraction = createInteraction("Leave fish overnight in water", codFish, codFishRestedOvernightInWaterEvent)
                 .withRequiredEvent(prepareGuestsDinner);
