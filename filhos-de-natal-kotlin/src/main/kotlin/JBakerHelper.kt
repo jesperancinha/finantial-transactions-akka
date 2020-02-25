@@ -46,10 +46,10 @@ object JBakerHelper {
         return JavaConverters.asScalaBuffer(Arrays.asList(*ingredient)).toSet()
     }
 
-    fun createInteraction(name: String?, ingredient: Ingredient?, event: Event?): Interaction {
+    fun createInteraction(name: String?, ingredients: Seq<Ingredient>, events: Seq<Event>): Interaction {
         return Interaction.apply(
-                name, seq(ingredient!!),
-                seq(event!!), setEmptyString(),
+                name, ingredients,
+                events, setEmptyString(),
                 setOfSetEmptyString(),
                 mapOfEmptyValue(),
                 mapOfEmptyString(),
