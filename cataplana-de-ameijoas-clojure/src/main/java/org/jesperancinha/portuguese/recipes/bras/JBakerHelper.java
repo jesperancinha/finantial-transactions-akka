@@ -15,6 +15,7 @@ import scala.collection.immutable.Map;
 import scala.collection.immutable.Set;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class JBakerHelper {
 
@@ -65,6 +66,7 @@ public class JBakerHelper {
     public static Interaction createInteraction(String name, Ingredient ingredient1, Ingredient ingredient2, Ingredient ingredient3, Event event) {
         return createInteraction(name, seq(ingredient1, ingredient2, ingredient3), seq(event));
     }
+
     public static Interaction createInteraction(String name, Seq<Ingredient> ingredients, Seq<Event> events) {
         return Interaction.apply(
                 name, ingredients,
@@ -95,11 +97,11 @@ public class JBakerHelper {
                 Option.empty());
     }
 
-    public static Recipe createRecipe(String recipeName, Interaction interaction1, Event event1){
+    public static Recipe createRecipe(String recipeName, List<Interaction> iteractions, List<Event> events) {
         return Recipe
                 .apply(recipeName,
-                        seq(interaction1),
-                        set(event1),
+                        seq(iteractions.toArray(new Interaction[0])),
+                        set(events.toArray(new Event[0])),
                         null,
                         Option.empty(),
                         Option.empty());
