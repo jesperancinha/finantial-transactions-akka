@@ -22,6 +22,7 @@
         <lombok-maven-plugin.version>1.18.10.0</lombok-maven-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <gmavenplus-plugin.version>1.8.1</gmavenplus-plugin.version>
+        <scala-maven-plugin.version>4.3.1</scala-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -95,7 +96,7 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.3.1</version>
+                <version>${scala-maven-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>compile1</id>

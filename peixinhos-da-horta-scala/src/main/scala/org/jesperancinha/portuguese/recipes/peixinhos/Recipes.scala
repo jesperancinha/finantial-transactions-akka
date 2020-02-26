@@ -87,8 +87,5 @@ object Recipes {
       makeBatter, seasonBatter, addColdWater,
       passPodsThroughBatter, fryPods
     )
-    .withSensoryEvents(dinnerTime, familyIsHungry, cookingTableDoneForBeans,
-      beansWashed, removedBeanThread, podsAreCutInHalf,
-      beansAreCooked, beansDrained, flowerWithEggsMixed,
-      mixIsSeasoned, moreColdWaterAdded, passedPodsThroughBatter, podsAreFried)
+    .withSensoryEvents(dinnerTime, familyIsHungry)
 }

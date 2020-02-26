@@ -23,7 +23,7 @@ object JBakerHelper {
     }
 
     private fun setEmptyString(): Set<String> {
-        return HashSet()
+        return HashSet<String>()
     }
 
     private fun setOfSetEmptyString(): Set<Set<String>> {

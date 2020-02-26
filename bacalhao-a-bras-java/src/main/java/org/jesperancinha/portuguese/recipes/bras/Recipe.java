@@ -62,9 +62,9 @@ public class Recipe {
     final Interaction boilFishInteraction = createInteraction("Boil fish", codFishDippedInWater, boilFishEvent)
             .withRequiredEvent(codFishRestedOvernightInWaterEvent);
     final Interaction slicePotatoesInteraction = createInteraction("Slice potatoes", potatoes, potatosHaveBeednSlicedEvent)
-            .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+            .withRequiredEvent(prepareGuestsDinner);
     final Interaction sliceOnionsInteraction = createInteraction("Slice onions", oneOnion, onionsHaveBeednSlicedEvent)
-            .withRequiredEvent(codFishRestedOvernightInWaterEvent);
+            .withRequiredEvent(prepareGuestsDinner);
 
     final Interaction skinFishInteraction = createInteraction("Skinned Fish", boiledCodFish, skinCodFishEvent)
             .withRequiredEvent(boilFishEvent);
@@ -73,7 +73,7 @@ public class Recipe {
     final Interaction deflakeFishInteraction = createInteraction("Deflake fish", bonedCodFish, deflakeCodFishEvent)
             .withRequiredEvent(boneCodFishEvent);
     final Interaction coverSaucePanInteraction = createInteraction("Cover sauce pan", seq(oneSlicedOnion, halfCupOliveOil), seq(coverSaucePanEvent))
-            .withRequiredEvent(deflakeCodFishEvent);
+            .withRequiredEvent(onionsHaveBeednSlicedEvent);
     final Interaction sauteOnionsInteraction = createInteraction("Saute Onions", saucePanCovered, sauteOnionsEvent)
             .withRequiredEvent(coverSaucePanEvent);
     final Interaction addThinPotatoesInteraction = createInteraction("Golden brown thin potatoes", seq(sautedOnions, potatoStrips), seq(goldenBrownPotatoesEvent))

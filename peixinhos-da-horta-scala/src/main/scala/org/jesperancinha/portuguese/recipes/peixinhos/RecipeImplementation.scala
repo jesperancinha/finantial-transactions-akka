@@ -9,13 +9,13 @@ import scala.concurrent.Future
 
 object RecipeImplementation {
 
-  val setupCookingTableInstanceForBeans: InteractionInstance = InteractionInstance(
+  val setupCookingTableInstanceForBeansInteraction: InteractionInstance = InteractionInstance(
     name = setupCookingTableForBeans.name,
     input = Seq(CharArray, CharArray, CharArray, CharArray, CharArray, CharArray, CharArray),
     run = handleCookingTableForBeansSetup
   )
 
-  val setupCookingTableInstanceForBatter: InteractionInstance = InteractionInstance(
+  val setupCookingTableInstanceForBatterInteraction: InteractionInstance = InteractionInstance(
     name = setupCookingTableForBatter.name,
     input = Seq(CharArray, CharArray, CharArray, CharArray, CharArray, CharArray, CharArray),
     run = handleCookingTableForBatterSetup

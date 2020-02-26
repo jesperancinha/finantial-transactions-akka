@@ -4,11 +4,10 @@ import org.joda.time.DateTime;
 
 public class TaskSimulator {
 
-    public static void waitMilliseconds(String name, long milliseconds){
-        System.out.println(String.format("%s, 1, %s", name, DateTime.now().toString()));
-        for (int i = 0; i < milliseconds; i++) {
+    public static void waitMilliseconds(String name, long millisecondsTimes10){
+        for (int i = 0; i < millisecondsTimes10; i++) {
             try {
-                Thread.sleep(1);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

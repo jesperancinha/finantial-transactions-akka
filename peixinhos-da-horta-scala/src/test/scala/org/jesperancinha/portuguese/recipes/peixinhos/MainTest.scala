@@ -6,8 +6,8 @@ import com.ing.baker.runtime.scaladsl.{Baker, EventInstance}
 import com.ing.baker.types.PrimitiveValue
 import org.jesperancinha.portuguese.recipes.peixinhos.RecipeImplementation._
 import org.jesperancinha.portuguese.recipes.peixinhos.Recipes._
-import org.scalatest.Matchers
 import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
@@ -36,9 +36,11 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
+    baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
+
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
-        setupCookingTableInstanceForBeans, setupCookingTableInstanceForBatter, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
         drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
         seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
       recipeId <- baker.addRecipe(compileRecipe)
@@ -74,9 +76,11 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
+    baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
+
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
-        setupCookingTableInstanceForBeans, setupCookingTableInstanceForBatter,
+        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction,
         cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
         drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
         seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
@@ -97,6 +101,8 @@ class MainTest extends AnyFlatSpec with Matchers {
 
 
     val unit: Unit = Await.result(program, 15 seconds)
+
+    Thread.sleep(3000)
     val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 10 seconds)
 
     println(unit)
