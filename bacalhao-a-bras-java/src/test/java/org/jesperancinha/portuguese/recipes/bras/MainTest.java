@@ -15,10 +15,10 @@ import scala.runtime.BoxedUnit;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+import static java.util.Optional.ofNullable;
 import static org.jesperancinha.portuguese.recipes.bras.JBakerHelper.createInteractionInstance;
 import static org.jesperancinha.portuguese.recipes.bras.TaskSimulator.waitMilliseconds;
 
@@ -27,165 +27,164 @@ public class MainTest {
     private final Recipe recipe = new Recipe();
     private final InteractionInstance dippFishInWaterInteractionInstance =
             createInteractionInstance(recipe.dippFishInWaterInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Fish dipped in water", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.codFishRestedOvernightInWaterEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.codFishDippedInWater.name(), new PrimitiveValue("Greatly wet"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getGreatlyWet())));
+
+    private EventInstance getGreatlyWet() {
+        waitMilliseconds("Fish dipped in water", 100);
+        return EventInstance
+                .apply(recipe.codFishRestedOvernightInWaterEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.codFishDippedInWater.name(), new PrimitiveValue("Greatly wet"));
+                        }});
+    }
 
     private final InteractionInstance boilFishInteractionInstance =
             createInteractionInstance(recipe.boilFishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Boil fish", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.boilFishEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.boiledCodFish.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getSuperBoiled())));
+
+    private EventInstance getSuperBoiled() {
+        waitMilliseconds("Boil fish", 100);
+        return EventInstance
+                .apply(recipe.boilFishEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.boiledCodFish.name(), new PrimitiveValue("Super boiled"));
+                        }});
+    }
 
 
     private final InteractionInstance slicePotatoesInteractionInstance =
             createInteractionInstance(recipe.slicePotatoesInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Slice potatoes", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.potatosHaveBeednSlicedEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.potatoStrips.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getGreatlySliced())));
+
+    private EventInstance getGreatlySliced() {
+        waitMilliseconds("Slice potatoes", 100);
+        return EventInstance
+                .apply(recipe.potatosHaveBeednSlicedEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.potatoStrips.name(), new PrimitiveValue("Greatly sliced"));
+                        }});
+    }
 
     private final InteractionInstance sliceOnionsInteractionInstance =
             createInteractionInstance(recipe.sliceOnionsInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Slice onions", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.onionsHaveBeednSlicedEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.oneSlicedOnion.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getSuperOnions())));
+
+    private EventInstance getSuperOnions() {
+        waitMilliseconds("Slice onions", 100);
+        return EventInstance
+                .apply(recipe.onionsHaveBeednSlicedEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.oneSlicedOnion.name(), new PrimitiveValue("Super Onions"));
+                        }});
+    }
 
     private final InteractionInstance skinFishInteractionInstance =
             createInteractionInstance(recipe.skinFishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Skin fish", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.skinCodFishEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.skinnedCodFish.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getSkinnedFish())));
+
+    private EventInstance getSkinnedFish() {
+        waitMilliseconds("Skin fish", 100);
+        return EventInstance
+                .apply(recipe.skinCodFishEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.skinnedCodFish.name(), new PrimitiveValue("Skinned fish"));
+                        }});
+    }
+
     private final InteractionInstance boneFishInteractionInstance =
             createInteractionInstance(recipe.boneFishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Debone Fish ", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.boneCodFishEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.bonedCodFish.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getNoBonesInThisFish())));
+
+    private EventInstance getNoBonesInThisFish() {
+        waitMilliseconds("Debone Fish ", 100);
+        return EventInstance
+                .apply(recipe.boneCodFishEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.bonedCodFish.name(), new PrimitiveValue("No bones in this fish"));
+                        }});
+    }
 
     private final InteractionInstance deflakeFishInteractionInstance =
             createInteractionInstance(recipe.deflakeFishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Deflake fish", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.deflakeCodFishEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.deflakedCodFish.name(), new PrimitiveValue("Awesomly deflaked"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getAwesomlyDeflaked())));
+
+    private EventInstance getAwesomlyDeflaked() {
+        waitMilliseconds("Deflake fish", 100);
+        return EventInstance
+                .apply(recipe.deflakeCodFishEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.deflakedCodFish.name(), new PrimitiveValue("Awesomly deflaked"));
+                        }});
+    }
 
     private final InteractionInstance coverSaucePanInteractionInstance =
             createInteractionInstance(recipe.coverSaucePanInteraction.name(), 2,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Cover pan with sauce", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.coverSaucePanEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.saucePanCovered.name(), new PrimitiveValue("Awesomly deflaked"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getGoodSaucePan())));
+
+    private EventInstance getGoodSaucePan() {
+        waitMilliseconds("Cover pan with sauce", 100);
+        return EventInstance
+                .apply(recipe.coverSaucePanEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.saucePanCovered.name(), new PrimitiveValue("Good sauce pan"));
+                        }});
+    }
 
     private final InteractionInstance sauteOnionsInteractionInstance =
             createInteractionInstance(recipe.sauteOnionsInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Saute Onions", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.sauteOnionsEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.sautedOnions.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getBestSauteOnionsEver())));
+
+    private EventInstance getBestSauteOnionsEver() {
+        waitMilliseconds("Saute Onions", 100);
+        return EventInstance
+                .apply(recipe.sauteOnionsEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.sautedOnions.name(), new PrimitiveValue("Best Saute Onions Ever"));
+                        }});
+    }
 
     private final InteractionInstance addThinPotatoesInteractionInstance =
             createInteractionInstance(recipe.addThinPotatoesInteraction.name(), 2,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Thin potato strips on the pan", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.goldenBrownPotatoesEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.goldenbrownedPotatoes.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getThinPotatoStrips())));
+
+    private EventInstance getThinPotatoStrips() {
+        waitMilliseconds("Thin potato strips on the pan", 100);
+        return EventInstance
+                .apply(recipe.goldenBrownPotatoesEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.goldenbrownedPotatoes.name(), new PrimitiveValue("Thin potato strips"));
+                        }});
+    }
 
     private final InteractionInstance cookCodFishInteractionInstance =
             createInteractionInstance(recipe.cookCodFishInteraction.name(), 2,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Cook fish", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.cookCodFishLowHeatEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.cookedCodFishLowHeat.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getCookedFish())));
+
+    private EventInstance getCookedFish() {
+        waitMilliseconds("Cook fish", 100);
+        return EventInstance
+                .apply(recipe.cookCodFishLowHeatEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.cookedCodFishLowHeat.name(), new PrimitiveValue("Cooked fish"));
+                        }});
+    }
 
     private final InteractionInstance beatEggsInteractionsInstance =
             createInteractionInstance(recipe.beatEggsInteraction.name(), 3,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Beat eggs", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.beatEggsEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.beatenEggs.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getTheRightWayBeatenEggs())));
+
+    private EventInstance getTheRightWayBeatenEggs() {
+        waitMilliseconds("Beat eggs", 100);
+        return EventInstance
+                .apply(recipe.beatEggsEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.beatenEggs.name(), new PrimitiveValue("The right way beaten eggs"));
+                        }});
+    }
 
     private final InteractionInstance eggsAddedToPanInteractionInstance =
             createInteractionInstance(recipe.eggsAddedToPanInteraction.name(), 2,
-                    CompletableFuture.supplyAsync(() ->
-                            Optional.ofNullable(getEggsToPan())
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getEggsToPan())));
 
     private EventInstance getEggsToPan() {
         waitMilliseconds("Add eggs to the pan", 100);
@@ -198,42 +197,42 @@ public class MainTest {
 
     private final InteractionInstance mixCookingOnMediumHeatInteractionInstance =
             createInteractionInstance(recipe.mixCookingOnMediumHeatInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() -> Optional.ofNullable(getSuperBoiled())));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getMixToMediumHeat())));
 
-    private EventInstance getSuperBoiled() {
+    private EventInstance getMixToMediumHeat() {
         waitMilliseconds("Mix everything on medium heat", 100);
         return EventInstance
                 .apply(recipe.mixedCookedOnMediumHeatEvent.name(),
                         new HashMap<String, Value>() {{
-                            put(recipe.mediumHeatCookedMix.name(), new PrimitiveValue("Super boiled"));
+                            put(recipe.mediumHeatCookedMix.name(), new PrimitiveValue("Mix to medium heat"));
                         }});
     }
 
     private final InteractionInstance pourMixOverDishInteractionInstance =
             createInteractionInstance(recipe.pourMixOverDishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Pour mix on a dish", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.pourMixtureIntoServingDishEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.bacalhauABras.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getServedGently())));
+
+    private EventInstance getServedGently() {
+        waitMilliseconds("Pour mix on a dish", 100);
+        return EventInstance
+                .apply(recipe.pourMixtureIntoServingDishEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.bacalhauABras.name(), new PrimitiveValue("Served gently"));
+                        }});
+    }
 
     private final InteractionInstance decorateDishInteractionInstance =
             createInteractionInstance(recipe.decorateDishInteraction.name(), 1,
-                    CompletableFuture.supplyAsync(() ->
-                            {
-                                waitMilliseconds("Decorate Bacalhau à Brás", 100);
-                                return Optional.ofNullable(EventInstance
-                                        .apply(recipe.decorateWithOlivesEvent.name(),
-                                                new HashMap<String, Value>() {{
-                                                    put(recipe.bacalhauABrasCoveredWithBlackOlives.name(), new PrimitiveValue("Super boiled"));
-                                                }}));
-                            }
-                    ));
+                    CompletableFuture.supplyAsync(() -> ofNullable(getWorldClassBacalhauABras())));
+
+    private EventInstance getWorldClassBacalhauABras() {
+        waitMilliseconds("Decorate Bacalhau à Brás", 100);
+        return EventInstance
+                .apply(recipe.decorateWithOlivesEvent.name(),
+                        new HashMap<String, Value>() {{
+                            put(recipe.bacalhauABrasCoveredWithBlackOlives.name(), new PrimitiveValue("World Class Bacalhau A Bras"));
+                        }});
+    }
 
     @Test
     void createBacalhauABrasRecipe() {
