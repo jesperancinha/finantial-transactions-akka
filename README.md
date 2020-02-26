@@ -103,6 +103,15 @@ brew install leiningen
 lein lein new app cataplana-de-ameijoas-clojure
 ```
 
+-   Git tag change
+```bash
+git tag new-tag old-tag
+git tag -d old-tag
+git push origin :refs/tags/old-tag
+git push --tags
+git pull --prune --tags
+```
+
 ## References
 
 -   [ING Baker](https://github.com/ing-bank/baker)
