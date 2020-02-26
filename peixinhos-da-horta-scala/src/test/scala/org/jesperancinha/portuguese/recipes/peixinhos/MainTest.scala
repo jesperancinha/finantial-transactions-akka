@@ -31,9 +31,6 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     compileRecipe.validationErrors should be('empty)
 
-    implicit val actorSystem: ActorSystem =
-      ActorSystem("PeixinhosDaHortaSystem")
-
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
     baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
@@ -71,12 +68,9 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     compileRecipe.validationErrors should be('empty)
 
-    implicit val actorSystem: ActorSystem =
-      ActorSystem("PeixinhosDaHortaSystem")
-
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
-    baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
+//    baker.registerEventListener((recipeId, event) => TaskSimulator.waitMilliseconds(event.name + recipeId, 10))
 
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
@@ -100,7 +94,30 @@ class MainTest extends AnyFlatSpec with Matchers {
     } yield ()
 
 
+    val program2: Future[Unit] = for {
+      _ <- baker.addInteractionInstances(Seq(
+        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction,
+        cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
+        seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
+      recipeId <- baker.addRecipe(compileRecipe)
+      _ <- baker.bake(recipeId, "recipe-instance-id2")
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id2", EventInstance(name = Recipes.dinnerTime.name))
+      familyHungryEvent = new EventInstance(name = Recipes.familyIsHungry.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        oliveOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id2", familyHungryEvent)
+    } yield ()
+
+
     val unit: Unit = Await.result(program, 15 seconds)
+    val unit2: Unit = Await.result(program2, 15 seconds)
 
     Thread.sleep(3000)
     val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 10 seconds)
