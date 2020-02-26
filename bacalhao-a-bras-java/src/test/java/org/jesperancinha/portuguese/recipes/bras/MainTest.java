@@ -224,6 +224,7 @@ public class MainTest {
         baker.registerEventListener((EventListener) (recipeInstanceId, event) ->
                 TaskSimulator.waitMilliseconds(event.name(), 10));
 
+
         baker.addInteractionInstances(
                 Arrays.asList(dippFishInWaterInteractionInstance,
                         boilFishInteractionInstance,

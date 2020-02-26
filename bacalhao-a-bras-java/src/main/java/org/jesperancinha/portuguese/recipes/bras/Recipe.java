@@ -38,24 +38,24 @@ public class Recipe {
     final Ingredient bacalhauABrasCoveredWithBlackOlives = createIngredient("Bacalhau à Brás covered with black olives");
 
     final Event prepareGuestsDinner = Event.apply("The weekend is starting and I have to prepare dinner for my guests on Saturday",
-            seq(codFish, milkTeaSpoon, saltNPepper, eggs, potatoes, oneOnion, blackOlives, halfCupOliveOil));
+            seq(codFish, milkTeaSpoon, saltNPepper, eggs, potatoes, oneOnion, blackOlives, halfCupOliveOil)).withMaxFiringLimit(10);
 
-    final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(codFishDippedInWater));
-    final Event onionsHaveBeednSlicedEvent = Event.apply("Onions have been sliced", seq(oneSlicedOnion));
-    final Event potatosHaveBeednSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips));
-    final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minutes", seq(boiledCodFish));
-    final Event skinCodFishEvent = Event.apply("Cod fish has been skinned", seq(skinnedCodFish));
-    final Event boneCodFishEvent = Event.apply("Cod fish has been boned", seq(bonedCodFish));
-    final Event deflakeCodFishEvent = Event.apply("Cod fish has been deflaked", seq(deflakedCodFish));
-    final Event coverSaucePanEvent = Event.apply("Saucepan covered with olive oil", seq(saucePanCovered));
-    final Event sauteOnionsEvent = Event.apply("Onions saute until transparent", seq(sautedOnions));
-    final Event goldenBrownPotatoesEvent = Event.apply("Potatoes have been golden browned", seq(goldenbrownedPotatoes));
-    final Event cookCodFishLowHeatEvent = Event.apply("Cod fish has been cooked in low heat", seq(cookedCodFishLowHeat));
-    final Event beatEggsEvent = Event.apply("Eggs have been beaten", seq(beatenEggs));
-    final Event eggsAddedToThePanEvent = Event.apply("Cod fish has been mixed with beaten eggs", seq(codFishWithEggs));
-    final Event mixedCookedOnMediumHeatEvent = Event.apply("Medium heat cooked mix", seq(mediumHeatCookedMix));
-    final Event pourMixtureIntoServingDishEvent = Event.apply("Mix poured into serving dish with parsley", seq(bacalhauABras));
-    final Event decorateWithOlivesEvent = Event.apply("Decorated with black olives", seq(bacalhauABrasCoveredWithBlackOlives));
+    final Event codFishRestedOvernightInWaterEvent = Event.apply("Cod fish has been dipped in water for at lest 24 hours", seq(codFishDippedInWater)).withMaxFiringLimit(10);
+    final Event onionsHaveBeednSlicedEvent = Event.apply("Onions have been sliced", seq(oneSlicedOnion)).withMaxFiringLimit(10);
+    final Event potatosHaveBeednSlicedEvent = Event.apply("Potatoes have been sliced", seq(potatoStrips)).withMaxFiringLimit(10);
+    final Event boilFishEvent = Event.apply("Cod fish has been boiled for 20 minutes", seq(boiledCodFish)).withMaxFiringLimit(10);
+    final Event skinCodFishEvent = Event.apply("Cod fish has been skinned", seq(skinnedCodFish)).withMaxFiringLimit(10);
+    final Event boneCodFishEvent = Event.apply("Cod fish has been boned", seq(bonedCodFish)).withMaxFiringLimit(10);
+    final Event deflakeCodFishEvent = Event.apply("Cod fish has been deflaked", seq(deflakedCodFish)).withMaxFiringLimit(10);
+    final Event coverSaucePanEvent = Event.apply("Saucepan covered with olive oil", seq(saucePanCovered)).withMaxFiringLimit(10);
+    final Event sauteOnionsEvent = Event.apply("Onions saute until transparent", seq(sautedOnions)).withMaxFiringLimit(10);
+    final Event goldenBrownPotatoesEvent = Event.apply("Potatoes have been golden browned", seq(goldenbrownedPotatoes)).withMaxFiringLimit(10);
+    final Event cookCodFishLowHeatEvent = Event.apply("Cod fish has been cooked in low heat", seq(cookedCodFishLowHeat)).withMaxFiringLimit(10);
+    final Event beatEggsEvent = Event.apply("Eggs have been beaten", seq(beatenEggs)).withMaxFiringLimit(10);
+    final Event eggsAddedToThePanEvent = Event.apply("Cod fish has been mixed with beaten eggs", seq(codFishWithEggs)).withMaxFiringLimit(10);
+    final Event mixedCookedOnMediumHeatEvent = Event.apply("Medium heat cooked mix", seq(mediumHeatCookedMix)).withMaxFiringLimit(10);
+    final Event pourMixtureIntoServingDishEvent = Event.apply("Mix poured into serving dish with parsley", seq(bacalhauABras)).withMaxFiringLimit(10);
+    final Event decorateWithOlivesEvent = Event.apply("Decorated with black olives", seq(bacalhauABrasCoveredWithBlackOlives)).withMaxFiringLimit(10);
 
     final Interaction dippFishInWaterInteraction = createInteraction("Leave fish overnight in water", codFish, codFishRestedOvernightInWaterEvent)
             .withRequiredEvent(prepareGuestsDinner);
