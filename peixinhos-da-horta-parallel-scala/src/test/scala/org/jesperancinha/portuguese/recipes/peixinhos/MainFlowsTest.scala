@@ -16,7 +16,7 @@ import scala.language.postfixOps
 
 class MainFlowsTest extends AnyFlatSpec with Matchers {
 
-  implicit val actorSystem = ActorSystem("peixinhosDaHorta")
+  implicit val actorSystem: ActorSystem = ActorSystem("peixinhosDaHorta")
   implicit val timeout: FiniteDuration = 2.seconds
 
   "A peixinhos da horta recipe" should "compile and validate" in {
@@ -26,62 +26,11 @@ class MainFlowsTest extends AnyFlatSpec with Matchers {
 
     println(compileRecipe.getRecipeVisualization);
   }
-  "Baking a peixinhos da horta recipe" should "start baking it" in {
+
+  "Baking a peixinhos da horta recipe" should "complete baking it in the most parallel ways possible" in {
     val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
 
     compileRecipe.validationErrors should be('empty)
-
-    implicit val actorSystem: ActorSystem =
-      ActorSystem("PeixinhosDaHortaSystem")
-
-    val baker: Baker = Baker.akkaLocalDefault(actorSystem)
-
-    baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
-
-    val program: Future[Unit] = for {
-      _ <- baker.addInteractionInstances(Seq(
-        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
-        drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
-        seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
-      recipeId <- baker.addRecipe(compileRecipe)
-      _ <- baker.bake(recipeId, "recipe-instance-id")
-      eventInstance  = new EventInstance(name = Recipes.startBeans.name, providedIngredients = Map(
-        greenBeans.name -> PrimitiveValue("The good kind"),
-        salt.name -> PrimitiveValue("The good kind"),
-        flower.name -> PrimitiveValue("The good kind"),
-        egg.name -> PrimitiveValue("The good kind"),
-        pepper.name -> PrimitiveValue("The good kind"),
-        oliveOil.name -> PrimitiveValue("The good kind"),
-        water.name -> PrimitiveValue("The good kind")
-      ))
-      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
-      eventInstance = new EventInstance(name = Recipes.startBatter.name, providedIngredients = Map(
-        greenBeans.name -> PrimitiveValue("The good kind"),
-        salt.name -> PrimitiveValue("The good kind"),
-        flower.name -> PrimitiveValue("The good kind"),
-        egg.name -> PrimitiveValue("The good kind"),
-        pepper.name -> PrimitiveValue("The good kind"),
-        oliveOil.name -> PrimitiveValue("The good kind"),
-        water.name -> PrimitiveValue("The good kind")
-      ))
-      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
-    } yield ()
-
-    val unit: Unit = Await.result(program, 5 seconds)
-
-    val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 5 seconds)
-    println(unit)
-    println(completeGraph)
-  }
-
-
-  "Baking a peixinhos da horta recipe" should "complete baking it" in {
-    val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
-
-    compileRecipe.validationErrors should be('empty)
-
-    implicit val actorSystem: ActorSystem =
-      ActorSystem("PeixinhosDaHortaSystemFlows")
 
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
@@ -115,10 +64,55 @@ class MainFlowsTest extends AnyFlatSpec with Matchers {
       _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
     } yield ()
 
+    Thread.sleep(3000)
 
     val unit: Unit = Await.result(program, 15 seconds)
+    val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 10 seconds)
+
+    println(unit)
+    println(completeGraph)
+  }
+
+  "Baking a peixinhos da horta recipe" should "almost complete baking it but fail in the last interaction" in {
+    val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
+
+    compileRecipe.validationErrors should be('empty)
+
+    val baker: Baker = Baker.akkaLocalDefault(actorSystem)
+
+    val program: Future[Unit] = for {
+      _ <- baker.addInteractionInstances(Seq(
+        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction,
+        cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        drainBeansInstance, fryPodsInstanceFail, passPodsThroughBatterInstance, makeBatterInstance,
+        seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
+      recipeId <- baker.addRecipe(compileRecipe)
+      _ <- baker.bake(recipeId, "recipe-instance-id")
+      eventInstance  = new EventInstance(name = Recipes.startBeans.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        oliveOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))
+      _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
+      eventInstance = new EventInstance(name = Recipes.startBatter.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        oliveOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))
+      _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
+    } yield ()
 
     Thread.sleep(3000)
+
+    val unit: Unit = Await.result(program, 15 seconds)
     val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 10 seconds)
 
     println(unit)

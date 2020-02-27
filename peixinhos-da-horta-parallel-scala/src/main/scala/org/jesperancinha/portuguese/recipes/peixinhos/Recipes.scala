@@ -1,5 +1,6 @@
 package org.jesperancinha.portuguese.recipes.peixinhos
 
+import com.ing.baker.recipe.common.InteractionFailureStrategy
 import com.ing.baker.recipe.scaladsl.{Event, Ingredient, Interaction, Recipe}
 
 object Recipes {
@@ -88,4 +89,6 @@ object Recipes {
       passPodsThroughBatter, fryPods
     )
     .withSensoryEvents(startBeans, startBatter)
+    .withDefaultFailureStrategy(
+      InteractionFailureStrategy.FireEventAfterFailure(Option.apply("ooops")))
 }

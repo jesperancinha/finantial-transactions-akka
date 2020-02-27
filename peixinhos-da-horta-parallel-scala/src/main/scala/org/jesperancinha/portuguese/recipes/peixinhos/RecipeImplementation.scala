@@ -176,4 +176,15 @@ object RecipeImplementation {
         Map(peixinhosDaHorta.name -> PrimitiveValue("Peixinhos da Horta")))).orElse(null)
     }
   }
+  val fryPodsInstanceFail: InteractionInstance = InteractionInstance(
+    name = fryPods.name,
+    input = Seq(CharArray),
+    run = handleFryPodsFail
+  )
+
+  def handleFryPodsFail(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
+    Future {
+      throw new RuntimeException("The pan fell off!")
+    }
+  }
 }
