@@ -12,7 +12,7 @@ COPY filhos-de-natal-kotlin $runningFolder/filhos-de-natal-kotlin
 
 COPY peixinhos-da-horta-scala $runningFolder/peixinhos-da-horta-scala
 
-COPY peixinhos-da-horta-scala-flows $runningFolder/peixinhos-da-horta-scala-flows
+COPY peixinhos-da-horta-parallel-scala $runningFolder/peixinhos-da-horta-parallel-scala
 
 COPY entrypoint.sh $runningFolder
 

@@ -6,7 +6,7 @@ sbt compile test
 
 cd ..
 
-cd peixinhos-da-horta-scala-flows
+cd peixinhos-da-horta-parallel-scala
 
 sbt compile test
 

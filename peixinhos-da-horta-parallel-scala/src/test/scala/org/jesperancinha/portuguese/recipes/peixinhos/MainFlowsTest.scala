@@ -14,7 +14,7 @@ import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 import scala.language.postfixOps
 
-class MainTest extends AnyFlatSpec with Matchers {
+class MainFlowsTest extends AnyFlatSpec with Matchers {
 
   implicit val actorSystem = ActorSystem("peixinhosDaHorta")
   implicit val timeout: FiniteDuration = 2.seconds
@@ -85,8 +85,6 @@ class MainTest extends AnyFlatSpec with Matchers {
 
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
-    baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
-
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
         setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction,
@@ -104,7 +102,7 @@ class MainTest extends AnyFlatSpec with Matchers {
         oliveOil.name -> PrimitiveValue("The good kind"),
         water.name -> PrimitiveValue("The good kind")
       ))
-      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
+      _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
       eventInstance = new EventInstance(name = Recipes.startBatter.name, providedIngredients = Map(
         greenBeans.name -> PrimitiveValue("The good kind"),
         salt.name -> PrimitiveValue("The good kind"),
@@ -114,7 +112,7 @@ class MainTest extends AnyFlatSpec with Matchers {
         oliveOil.name -> PrimitiveValue("The good kind"),
         water.name -> PrimitiveValue("The good kind")
       ))
-      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
+      _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
     } yield ()
 
 

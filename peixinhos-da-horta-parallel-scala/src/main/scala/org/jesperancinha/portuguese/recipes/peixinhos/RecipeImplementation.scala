@@ -3,6 +3,7 @@ package org.jesperancinha.portuguese.recipes.peixinhos
 import com.ing.baker.runtime.scaladsl.{EventInstance, IngredientInstance, InteractionInstance}
 import com.ing.baker.types.{CharArray, PrimitiveValue}
 import org.jesperancinha.portuguese.recipes.peixinhos.Recipes._
+import org.jesperancinha.portuguese.recipes.peixinhos.TaskSimulator.waitMilliseconds
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -23,6 +24,7 @@ object RecipeImplementation {
 
   def handleCookingTableForBeansSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(setupCookingTableForBeans.name, 10)
       Option.apply(new EventInstance(name = cookingTableDoneForBeans.name, providedIngredients = Map(
         greenBeansOnTable.name -> PrimitiveValue("Fresh beans")
       ))).orElse(null)
@@ -31,6 +33,7 @@ object RecipeImplementation {
 
   def handleCookingTableForBatterSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(setupCookingTableForBatter.name, 10)
       Option.apply(new EventInstance(name = cookingTableDoneForBatter.name, providedIngredients = Map(
         egg.name -> PrimitiveValue("A good egg"),
         flower.name -> PrimitiveValue("The finest flower")
@@ -47,6 +50,7 @@ object RecipeImplementation {
 
   def handleWashedBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(washBeans.name, 10)
       Option.apply(new EventInstance(name = beansWashed.name, providedIngredients = Map(greenBeansWashed.name -> PrimitiveValue("Beans washed")))).orElse(null)
     }
   }
@@ -59,6 +63,7 @@ object RecipeImplementation {
 
   def handleBeanThreadRemoval(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(greenBeansThreadRemoved.name, 10)
       Option.apply(new EventInstance(name = removedBeanThread.name, providedIngredients = Map(greenBeansThreadRemoved.name -> PrimitiveValue("Threadless beans")))).orElse(null)
     }
   }
@@ -71,6 +76,7 @@ object RecipeImplementation {
 
   def handleCutInHalfPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(cutPodInHalf.name, 10)
       Option.apply(new EventInstance(name = podsAreCutInHalf.name, providedIngredients = Map(halfPods.name -> PrimitiveValue("Half Pods")))).orElse(null)
     }
   }
@@ -83,6 +89,7 @@ object RecipeImplementation {
 
   def handleCookBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(cookBeans.name, 10)
       Option.apply(new EventInstance(name = beansAreCooked.name, providedIngredients = Map(cookedBeans.name -> PrimitiveValue("Cooked beans")))).orElse(null)
     }
   }
@@ -95,6 +102,7 @@ object RecipeImplementation {
 
   def handleDrainedBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(drainBeans.name, 10)
       Option.apply(new EventInstance(name = beansDrained.name, providedIngredients = Map(drainedBeans.name -> PrimitiveValue("Drained Beans!")))).orElse(null)
     }
   }
@@ -107,6 +115,8 @@ object RecipeImplementation {
 
   def handleMakeBatter(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(
+        makeBatter.name, 10)
       Option.apply(new EventInstance(name = flowerWithEggsMixed.name, Map(batterWithEggs.name -> PrimitiveValue("Hand made")))).orElse(null)
     }
   }
@@ -119,6 +129,7 @@ object RecipeImplementation {
 
   def handleBatterSeasoning(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(seasonBatter.name, 10)
       Option.apply(new EventInstance(name = mixIsSeasoned.name, providedIngredients = Map(batterWithSaltAndPepper.name -> PrimitiveValue("Batter Home Seasoned")))).orElse(null)
     }
   }
@@ -131,6 +142,7 @@ object RecipeImplementation {
 
   def handleAddColdWater(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(addColdWater.name, 10)
       Option.apply(new EventInstance(name = moreColdWaterAdded.name, providedIngredients = Map(
         batterWithColdWater.name -> PrimitiveValue("Better With Cold Watter"),
       ))).orElse(null)
@@ -145,6 +157,7 @@ object RecipeImplementation {
 
   def handlePassPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(passPodsThroughBatter.name, 10)
       Option.apply(new EventInstance(name = passedPodsThroughBatter.name,
         providedIngredients = Map(batteredPods.name -> PrimitiveValue("Pods with Batter")))).orElse(null)
     }
@@ -153,11 +166,12 @@ object RecipeImplementation {
   val fryPodsInstance: InteractionInstance = InteractionInstance(
     name = fryPods.name,
     input = Seq(CharArray),
-    run = handeFryPods
+    run = handleFryPods
   )
 
-  def handeFryPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
+  def handleFryPods(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(fryPods.name, 10)
       Option.apply(new EventInstance(name = podsAreFried.name, providedIngredients =
         Map(peixinhosDaHorta.name -> PrimitiveValue("Peixinhos da Horta")))).orElse(null)
     }

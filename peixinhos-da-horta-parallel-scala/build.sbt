@@ -1,6 +1,6 @@
 scalaVersion := "2.12.4"
 
-name := "peixinhos-da-horta-scala-flows"
+name := "peixinhos-da-horta-parallel-scala"
 organization := "org.jesperancinha.baker"
 version := "1.0"
 

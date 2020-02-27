@@ -23,8 +23,6 @@ object RecipeImplementation {
 
   def handleCookingTableForBeansSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      TaskSimulator.waitMilliseconds(
-        setupCookingTableForBeans.name, 10)
       Option.apply(new EventInstance(name = cookingTableDoneForBeans.name, providedIngredients = Map(
         greenBeansOnTable.name -> PrimitiveValue("Fresh beans")
       ))).orElse(null)
@@ -33,8 +31,6 @@ object RecipeImplementation {
 
   def handleCookingTableForBatterSetup(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      TaskSimulator.waitMilliseconds(
-        setupCookingTableForBatter.name, 10)
       Option.apply(new EventInstance(name = cookingTableDoneForBatter.name, providedIngredients = Map(
         egg.name -> PrimitiveValue("A good egg"),
         flower.name -> PrimitiveValue("The finest flower")
@@ -51,8 +47,6 @@ object RecipeImplementation {
 
   def handleWashedBeans(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      TaskSimulator.waitMilliseconds(
-        washBeans.name, 10)
       Option.apply(new EventInstance(name = beansWashed.name, providedIngredients = Map(greenBeansWashed.name -> PrimitiveValue("Beans washed")))).orElse(null)
     }
   }
@@ -113,8 +107,6 @@ object RecipeImplementation {
 
   def handleMakeBatter(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
-      TaskSimulator.waitMilliseconds(
-        makeBatter.name, 10)
       Option.apply(new EventInstance(name = flowerWithEggsMixed.name, Map(batterWithEggs.name -> PrimitiveValue("Hand made")))).orElse(null)
     }
   }

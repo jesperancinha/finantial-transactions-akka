@@ -32,7 +32,7 @@ jobs:
             - v1-dependencies-
 
       - run: cat /dev/null | cd peixinhos-da-horta-scala && sbt test:compile
-      - run: cat /dev/null | cd peixinhos-da-horta-scala-flows && sbt test:compile
+      - run: cat /dev/null | cd peixinhos-da-horta-parallel-scala && sbt test:compile
 
       - save_cache:
           paths:
