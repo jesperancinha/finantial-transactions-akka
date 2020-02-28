@@ -27,7 +27,7 @@ class MainFlowsTest extends AnyFlatSpec with Matchers {
     println(compileRecipe.getRecipeVisualization);
   }
 
-  "Baking a peixinhos da horta recipe" should "complete baking it in the most parallel ways possible" in {
+  "Baking a peixinhos da horta recipe" should "complete baking it in the most parallel ways possible with received" in {
     val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
 
     compileRecipe.validationErrors should be('empty)
@@ -62,6 +62,52 @@ class MainFlowsTest extends AnyFlatSpec with Matchers {
         water.name -> PrimitiveValue("The good kind")
       ))
       _ <- baker.fireEventAndResolveWhenReceived("recipe-instance-id", eventInstance)
+    } yield ()
+
+    Thread.sleep(3000)
+
+    val unit: Unit = Await.result(program, 15 seconds)
+    val completeGraph = Await.result(baker.getVisualState("recipe-instance-id"), 10 seconds)
+
+    println(unit)
+    println(completeGraph)
+  }
+
+  "Baking a peixinhos da horta recipe" should "complete baking it in the most parallel ways possible with complete" in {
+    val compileRecipe = RecipeCompiler.compileRecipe(peixinhosDaHortaRecipe)
+
+    compileRecipe.validationErrors should be('empty)
+
+    val baker: Baker = Baker.akkaLocalDefault(actorSystem)
+
+    val program: Future[Unit] = for {
+      _ <- baker.addInteractionInstances(Seq(
+        setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction,
+        cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
+        drainBeansInstance, fryPodsInstance, passPodsThroughBatterInstance, makeBatterInstance,
+        seasonBatterInstance, removeBeanThreadInstance, addColdWaterInstance))
+      recipeId <- baker.addRecipe(compileRecipe)
+      _ <- baker.bake(recipeId, "recipe-instance-id")
+      eventInstance  = new EventInstance(name = Recipes.startBeans.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        oliveOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
+      eventInstance = new EventInstance(name = Recipes.startBatter.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        oliveOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))
+      _ <- baker.fireEventAndResolveWhenCompleted("recipe-instance-id", eventInstance)
     } yield ()
 
     Thread.sleep(3000)

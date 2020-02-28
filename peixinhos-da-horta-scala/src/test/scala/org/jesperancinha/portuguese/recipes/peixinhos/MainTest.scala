@@ -109,6 +109,8 @@ class MainTest extends AnyFlatSpec with Matchers with BeforeAndAfter{
 
     baker.registerEventListener((_, event) => TaskSimulator.waitMilliseconds(event.name, 10))
 
+    TaskSimulator.waitMilliseconds("Start marker", 1);
+
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
         setupCookingTableInstanceForBeansInteraction, setupCookingTableInstanceForBatterInteraction, cookBeansInstance, cutPodsInHalfInstance, washBeansInstance,
@@ -144,6 +146,8 @@ class MainTest extends AnyFlatSpec with Matchers with BeforeAndAfter{
     val baker: Baker = Baker.akkaLocalDefault(actorSystem)
 
     baker.registerEventListener((recipeId, event) => TaskSimulator.waitMilliseconds(event.name + recipeId, 10))
+
+    TaskSimulator.waitMilliseconds("Start marker", 1)
 
     val program: Future[Unit] = for {
       _ <- baker.addInteractionInstances(Seq(
