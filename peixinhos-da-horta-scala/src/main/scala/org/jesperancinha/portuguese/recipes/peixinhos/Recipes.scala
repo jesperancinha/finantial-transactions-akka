@@ -17,7 +17,7 @@ object Recipes {
   val flower: Ingredient[String] = Ingredient[String]("100 g of flower")
   val egg: Ingredient[String] = Ingredient[String]("One egg")
   val pepper: Ingredient[String] = Ingredient[String]("Pepper")
-  val oliveOil: Ingredient[String] = Ingredient[String]("Olive Oil")
+  val sunFlowerOil: Ingredient[String] = Ingredient[String]("Sunflower Oil")
 
   val batter: Ingredient[String] = Ingredient[String]("Batter")
   val batterWithEggs: Ingredient[String] = Ingredient[String]("Batter with eggs")
@@ -26,8 +26,10 @@ object Recipes {
   val water: Ingredient[String] = Ingredient[String]("Water")
   val peixinhosDaHorta: Ingredient[String] = Ingredient[String]("Peixinhos da Horta")
 
-  val dinnerTime: Event = Event("Dinner time")
-  val familyIsHungry: Event = Event("Family is hungry", greenBeans, salt, flower, egg, pepper, oliveOil, water)
+  val dinnerTime: Event = Event("Dinner time").withMaxFiringLimit(1)
+  val familyIsHungry: Event = Event("Family is hungry").withMaxFiringLimit(1)
+
+  val startCooking: Event = Event("Start cooking", greenBeans, salt, flower, egg, pepper, sunFlowerOil, water).withMaxFiringLimit(1)
 
   val cookingTableDoneForBeans: Event = Event("Cooking Table Setup for Beans", greenBeansOnTable)
   val cookingTableDoneForBatter: Event = Event("Cooking Table Setup for Batter", egg, flower)
@@ -42,13 +44,17 @@ object Recipes {
   val passedPodsThroughBatter: Event = Event("Passed pods through batter", batteredPods)
   val podsAreFried: Event = Event("Pods are fried", peixinhosDaHorta)
 
-  val setupCookingTableForBeans: Interaction = Interaction("Setup Cooking Table for Beans",
-    Seq(greenBeans, salt, flower, egg, pepper, oliveOil, water), output = Seq(cookingTableDoneForBeans))
+  val startDinner: Interaction = Interaction("Dinner has started",
+    Seq(), output = Seq(startCooking))
     .withRequiredEvents(dinnerTime, familyIsHungry)
 
+  val setupCookingTableForBeans: Interaction = Interaction("Setup Cooking Table for Beans",
+    Seq(greenBeans, salt, flower, egg, pepper, sunFlowerOil, water),
+    output = Seq(cookingTableDoneForBeans))
+
   val setupCookingTableForBatter: Interaction = Interaction("Setup Cooking Table for batter",
-    Seq(greenBeans, salt, flower, egg, pepper, oliveOil, water), output = Seq(cookingTableDoneForBatter))
-    .withRequiredEvents(dinnerTime, familyIsHungry)
+    Seq(greenBeans, salt, flower, egg, pepper, sunFlowerOil, water),
+    output = Seq(cookingTableDoneForBatter))
 
   val washBeans: Interaction = Interaction("Washing up Beans",
     Seq(greenBeansOnTable), output = Seq(beansWashed))
@@ -78,12 +84,14 @@ object Recipes {
     Seq(drainedBeans, batterWithColdWater), output = Seq(passedPodsThroughBatter))
 
   val fryPods: Interaction = Interaction("Fry pods",
-    Seq(batteredPods), output = Seq(podsAreFried))
+    Seq(batteredPods, sunFlowerOil), output = Seq(podsAreFried))
 
   val peixinhosDaHortaRecipe: Recipe = Recipe("Peixinhos da Horta Recipe")
     .withInteractions(
+      startDinner,
       setupCookingTableForBeans,
-      setupCookingTableForBatter, washBeans, removeBeanThread,
+      setupCookingTableForBatter,
+      washBeans, removeBeanThread,
       cutPodInHalf, cookBeans, drainBeans,
       makeBatter, seasonBatter, addColdWater,
       passPodsThroughBatter, fryPods

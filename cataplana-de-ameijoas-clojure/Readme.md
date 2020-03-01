@@ -2,6 +2,7 @@
 
 ## Introduction
 
+[![alt text](../Documentation/pr-baker.png "Baker")](https://ing-bank.github.io/baker/)
 [![alt text](../Documentation/pr-Clojure.png "Clojure")](https://clojure.org/)
 
 ## Installation

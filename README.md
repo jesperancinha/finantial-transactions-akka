@@ -1,4 +1,7 @@
-# Baker portuguese recipes
+# Portuguese recipes with [Baker](https://ing-bank.github.io/baker/)
+
+[![alt text](Documentation/pr-ing.png "ING")](https://ing.com)
+[![alt text](Documentation/pr-baker.png "Baker")](https://ing-bank.github.io/baker/)
 
 [![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Baker%20portuguese%20recipes&color=informational)](https://github.com/jesperancinha/portuguese-recipes) 
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/portuguese-recipes.svg)](#)
@@ -18,7 +21,10 @@
 
 ## Introduction
 
+
 Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker project](https://ing-bank.github.io/baker). In this project, we will examine its potential.
+
+[Baker](https://ing-bank.github.io/baker) is a library which is responsible for the orchestration of different processes. Parallel to this, [Baker](https://ing-bank.github.io/baker/) creates [Graphviz](http://www.graphviz.org/) models and visualization flow charts which enable us to quickly visualize the status of our process.
 
 > Welcome to portuguese restaurant: "O Petisco de Olhão".
 >
@@ -116,7 +122,8 @@ git pull --prune --tags
 
 -   [ING Baker](https://github.com/ing-bank/baker)
 -   [ING Baker Document](https://ing-bank.github.io/baker)
--   [Webgraphiz](http://www.webgraphviz.com/)
+-   [Webgraphiz web App](http://www.webgraphviz.com/)
+-   [Graphiz website](http://www.graphviz.org/)
 -   [scale.bythebay.io: Nikola Kasev, Declare, verify and execute microservices-based process flows](https://www.youtube.com/watch?v=0bWQwUmeXHU)
 -   [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method)
 -   [Baker Runtime](https://search.maven.org/artifact/com.ing.baker/baker-runtime_2.12/3.0.1/jar)

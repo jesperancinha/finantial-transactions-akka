@@ -10,6 +10,28 @@ import scala.concurrent.Future
 
 object RecipeImplementation {
 
+  val startDinnerBeanInteraction: InteractionInstance = InteractionInstance(
+    name = startDinner.name,
+    input = Seq(),
+    run = handleCookingTableDinnerTime
+  )
+
+
+  def handleCookingTableDinnerTime(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
+    Future {
+      waitMilliseconds(startDinner.name, 10)
+      Option.apply(new EventInstance(name = startCooking.name, providedIngredients = Map(
+        greenBeans.name -> PrimitiveValue("The good kind"),
+        salt.name -> PrimitiveValue("The good kind"),
+        flower.name -> PrimitiveValue("The good kind"),
+        egg.name -> PrimitiveValue("The good kind"),
+        pepper.name -> PrimitiveValue("The good kind"),
+        sunFlowerOil.name -> PrimitiveValue("The good kind"),
+        water.name -> PrimitiveValue("The good kind")
+      ))).orElse(null)
+    }
+  }
+
   val setupCookingTableInstanceForBeansInteraction: InteractionInstance = InteractionInstance(
     name = setupCookingTableForBeans.name,
     input = Seq(CharArray, CharArray, CharArray, CharArray, CharArray, CharArray, CharArray),
@@ -165,7 +187,7 @@ object RecipeImplementation {
 
   val fryPodsInstance: InteractionInstance = InteractionInstance(
     name = fryPods.name,
-    input = Seq(CharArray),
+    input = Seq(CharArray, CharArray),
     run = handleFryPods
   )
 
@@ -176,14 +198,16 @@ object RecipeImplementation {
         Map(peixinhosDaHorta.name -> PrimitiveValue("Peixinhos da Horta")))).orElse(null)
     }
   }
+
   val fryPodsInstanceFail: InteractionInstance = InteractionInstance(
     name = fryPods.name,
-    input = Seq(CharArray),
+    input = Seq(CharArray, CharArray),
     run = handleFryPodsFail
   )
 
   def handleFryPodsFail(input: Seq[IngredientInstance]): Future[Option[EventInstance]] = {
     Future {
+      waitMilliseconds(fryPods.name, 10)
       throw new RuntimeException("The pan fell off!")
     }
   }

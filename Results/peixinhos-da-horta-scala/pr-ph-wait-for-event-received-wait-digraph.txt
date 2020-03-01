@@ -1,0 +1,128 @@
+digraph {
+	node [fontname = "ING Me", fontsize = 22, fontcolor = white]
+	pad = 0.2
+	"Drain beans" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Cut pods in half" -> ooops
+	"Mix flower with eggs" -> "Flower with eggs mixed"
+	"One egg" -> "Mix flower with eggs"
+	"Seasoned with salt and pepper" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Flower with eggs mixed" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Washing up Beans" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Sunflower Oil" -> "Setup Cooking Table for batter"
+	"Setup Cooking Table for batter" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	Pepper -> "Setup Cooking Table for Beans"
+	"Remove Bean Thread" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Battered pods" [shape = circle, style = filled, color = "#3b823a"]
+	"Washed green beans" [shape = circle, style = filled, color = "#3b823a"]
+	"500 g of green beans" -> "Setup Cooking Table for Beans"
+	"Cooking Table Setup for Batter" -> "Mix flower with eggs"
+	"Cooking Table Setup for Beans" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"100 g of flower" [shape = circle, style = filled, color = "#3b823a"]
+	"Passed pods through batter" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Cook beans" -> ooops
+	"Beans are drained from any water" -> "Drained beans"
+	"Pass pods through batter" -> ooops
+	"Mix flower with eggs" -> ooops
+	"Batter with cold water" [shape = circle, style = filled, color = "#3b823a"]
+	"Batter with eggs" [shape = circle, style = filled, color = "#3b823a"]
+	"Fry pods" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Cooking Table Setup for Batter" -> "One egg"
+	"Half pods" [shape = circle, style = filled, color = "#3b823a"]
+	Pepper -> "Setup Cooking Table for batter"
+	"Pods are fried" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Cook beans" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Drain beans" -> "Beans are drained from any water"
+	"Green beans with no Thread" [shape = circle, style = filled, color = "#3b823a"]
+	"Beans thread removed" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Batter with more water" -> ooops
+	"Batter with more water" -> "Cold water added"
+	"Washed green beans" -> "Remove Bean Thread"
+	"Seasoned with salt and pepper" -> "Batter with salt and pepper"
+	"Setup Cooking Table for Beans" -> ooops
+	"One egg" -> "Setup Cooking Table for batter"
+	"Flower with eggs mixed" -> "Batter with eggs"
+	"500 g of green beans on table" -> "Washing up Beans"
+	Water [shape = circle, style = filled, color = "#3b823a"]
+	"Family is hungry" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Season Mix" -> "Seasoned with salt and pepper"
+	"Season Mix" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Dinner has started" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Dinner time" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Sunflower Oil" [shape = circle, style = filled, color = "#3b823a"]
+	"Beans are cooked" -> "Cooked beans"
+	"100 g of flower" -> "Mix flower with eggs"
+	"Batter with cold water" -> "Pass pods through batter"
+	"100 g of flower" -> "Setup Cooking Table for Beans"
+	"Remove Bean Thread" -> "Beans thread removed"
+	"500 g of green beans" -> "Setup Cooking Table for batter"
+	"Cooking Table Setup for Beans" -> "500 g of green beans on table"
+	"Fry pods" -> ooops
+	"Cut pods in half" -> "Pods are cut in half"
+	"Cold water added" -> "Batter with cold water"
+	"Start cooking" -> Pepper
+	"Green beans with no Thread" -> "Cut pods in half"
+	"Drain beans" -> ooops
+	"Pods are cut in half" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Batter with more water" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Cold water added" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Half pods" -> "Cook beans"
+	"Washing up Beans" -> ooops
+	"Start cooking" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Dinner time" -> "Dinner has started"
+	"Drained beans" [shape = circle, style = filled, color = "#3b823a"]
+	"Beans are drained from any water" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Drained beans" -> "Pass pods through batter"
+	"Pods are cut in half" -> "Half pods"
+	"Season Mix" -> ooops
+	"A pinch of salt" [shape = circle, style = filled, color = "#3b823a"]
+	"Batter with salt and pepper" [shape = circle, style = filled, color = "#3b823a"]
+	"Setup Cooking Table for Beans" -> "Cooking Table Setup for Beans"
+	"Start cooking" -> "100 g of flower"
+	"Dinner has started" -> "Start cooking"
+	"Fry pods" -> "Pods are fried"
+	"Sunflower Oil" -> "Setup Cooking Table for Beans"
+	"Pods are fried" -> "Peixinhos da Horta"
+	"Passed pods through batter" -> "Battered pods"
+	"Cooking Table Setup for Batter" -> "100 g of flower"
+	"500 g of green beans" [shape = circle, style = filled, color = "#3b823a"]
+	"Start cooking" -> "A pinch of salt"
+	"Dinner has started" -> ooops
+	"Family is hungry" -> "Dinner has started"
+	"One egg" -> "Setup Cooking Table for Beans"
+	"500 g of green beans on table" [shape = circle, style = filled, color = "#3b823a"]
+	"Beans washed" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Pass pods through batter" -> "Passed pods through batter"
+	"Washing up Beans" -> "Beans washed"
+	"A pinch of salt" -> "Setup Cooking Table for Beans"
+	"Sunflower Oil" -> "Fry pods"
+	"Pass pods through batter" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Mix flower with eggs" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Batter with salt and pepper" -> "Batter with more water"
+	"Start cooking" -> "Sunflower Oil"
+	"Cooked beans" -> "Drain beans"
+	ooops [shape = diamond, style = "rounded, filled", color = "#767676", margin = 0.3]
+	Water -> "Setup Cooking Table for batter"
+	"Batter with eggs" -> "Season Mix"
+	"Setup Cooking Table for Beans" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Cut pods in half" [shape = rect, style = "rounded, filled", color = "#3b823a", penwidth = 2, margin = 0.5]
+	"Cooked beans" [shape = circle, style = filled, color = "#3b823a"]
+	"Beans are cooked" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Battered pods" -> "Fry pods"
+	"A pinch of salt" -> "Setup Cooking Table for batter"
+	"Peixinhos da Horta" [shape = circle, style = filled, color = "#3b823a"]
+	"Setup Cooking Table for batter" -> "Cooking Table Setup for Batter"
+	"100 g of flower" -> "Setup Cooking Table for batter"
+	"Setup Cooking Table for batter" -> ooops
+	"Cook beans" -> "Beans are cooked"
+	"Remove Bean Thread" -> ooops
+	"Cooking Table Setup for Batter" [shape = diamond, style = "rounded, filled", color = "#3b823a", margin = 0.3]
+	"Beans thread removed" -> "Green beans with no Thread"
+	"One egg" [shape = circle, style = filled, color = "#3b823a"]
+	Water -> "Batter with more water"
+	"Start cooking" -> "500 g of green beans"
+	Pepper [shape = circle, style = filled, color = "#3b823a"]
+	"Start cooking" -> Water
+	"Beans washed" -> "Washed green beans"
+	"Start cooking" -> "One egg"
+	Water -> "Setup Cooking Table for Beans"
+}

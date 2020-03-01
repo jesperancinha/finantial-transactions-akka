@@ -1,0 +1,139 @@
+Start marker, 1, 2020-03-01T19:38:41.202+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.085+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.098+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.108+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.121+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.132+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.143+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.155+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.167+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.179+01:00
+Dinner has started, 1, 2020-03-01T19:38:42.189+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.297+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.297+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.307+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.307+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.320+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.320+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.330+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.330+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.343+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.343+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.355+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.355+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.367+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.367+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.377+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.378+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.388+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.391+01:00
+Setup Cooking Table for batter, 1, 2020-03-01T19:38:42.400+01:00
+Setup Cooking Table for Beans, 1, 2020-03-01T19:38:42.403+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.434+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.441+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.447+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.451+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.460+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.461+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.472+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.472+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.484+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.484+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.495+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.497+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.508+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.510+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.519+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.522+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.530+01:00
+Washing up Beans, 1, 2020-03-01T19:38:42.534+01:00
+Mix flower with eggs, 1, 2020-03-01T19:38:42.540+01:00
+[INFO] [03/01/2020 19:38:42.543] [peixinhosDaHorta-akka.actor.default-dispatcher-4] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][duration:120][timeStarted:1583087922422][recipeInstanceId:recipe-instance-complete-id][transitionId:Mix flower with eggs][processEvent:TransitionFired][jobId:-7840005103886232508][timeCompleted:1583087922542][processId:recipe-instance-complete-id] Transition 'Mix flower with eggs' successfully fired
+Washing up Beans, 1, 2020-03-01T19:38:42.547+01:00
+[INFO] [03/01/2020 19:38:42.552] [peixinhosDaHorta-akka.actor.default-dispatcher-4] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][timeStarted:1583087922552][recipeInstanceId:recipe-instance-complete-id][transitionId:Flower with eggs mixed][processEvent:FiringTransition][jobId:-6081447884781860754][processId:recipe-instance-complete-id] Firing transition Flower with eggs mixed
+[INFO] [03/01/2020 19:38:42.554] [peixinhosDaHorta-akka.actor.default-dispatcher-4] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][duration:120][timeStarted:1583087922428][recipeInstanceId:recipe-instance-complete-id][transitionId:Washing up Beans][processEvent:TransitionFired][jobId:2283920693928099610][timeCompleted:1583087922548][processId:recipe-instance-complete-id] Transition 'Washing up Beans' successfully fired
+[INFO] [03/01/2020 19:38:42.560] [peixinhosDaHorta-akka.actor.default-dispatcher-3] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][timeStarted:1583087922560][recipeInstanceId:recipe-instance-complete-id][transitionId:Beans washed][processEvent:FiringTransition][jobId:5861276123453333667][processId:recipe-instance-complete-id] Firing transition Beans washed
+[INFO] [03/01/2020 19:38:42.560] [peixinhosDaHorta-akka.actor.default-dispatcher-3] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][duration:1][timeStarted:1583087922552][recipeInstanceId:recipe-instance-complete-id][transitionId:Flower with eggs mixed][processEvent:TransitionFired][jobId:-6081447884781860754][timeCompleted:1583087922553][processId:recipe-instance-complete-id] Transition 'Flower with eggs mixed' successfully fired
+[INFO] [03/01/2020 19:38:42.565] [peixinhosDaHorta-akka.actor.default-dispatcher-4] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][timeStarted:1583087922565][recipeInstanceId:recipe-instance-complete-id][transitionId:Season Mix][processEvent:FiringTransition][jobId:-2475953698773447140][processId:recipe-instance-complete-id] Firing transition Season Mix
+[INFO] [03/01/2020 19:38:42.565] [peixinhosDaHorta-akka.actor.default-dispatcher-4] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][duration:0][timeStarted:1583087922560][recipeInstanceId:recipe-instance-complete-id][transitionId:Beans washed][processEvent:TransitionFired][jobId:5861276123453333667][timeCompleted:1583087922560][processId:recipe-instance-complete-id] Transition 'Beans washed' successfully fired
+[INFO] [03/01/2020 19:38:42.570] [peixinhosDaHorta-akka.actor.default-dispatcher-7] [akka://peixinhosDaHorta/user/$b/recipe-instance-complete-id][timeStarted:1583087922570][recipeInstanceId:recipe-instance-complete-id][transitionId:Remove Bean Thread][processEvent:FiringTransition][jobId:-4769942303345966481][processId:recipe-instance-complete-id] Firing transition Remove Bean Thread
+Season Mix, 1, 2020-03-01T19:38:42.578+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.583+01:00
+Season Mix, 1, 2020-03-01T19:38:42.591+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.593+01:00
+Season Mix, 1, 2020-03-01T19:38:42.601+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.606+01:00
+Season Mix, 1, 2020-03-01T19:38:42.612+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.617+01:00
+Season Mix, 1, 2020-03-01T19:38:42.623+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.627+01:00
+Season Mix, 1, 2020-03-01T19:38:42.633+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.640+01:00
+Season Mix, 1, 2020-03-01T19:38:42.644+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.651+01:00
+Season Mix, 1, 2020-03-01T19:38:42.655+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.662+01:00
+Season Mix, 1, 2020-03-01T19:38:42.667+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.673+01:00
+Season Mix, 1, 2020-03-01T19:38:42.680+01:00
+Green beans with no Thread, 1, 2020-03-01T19:38:42.684+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.723+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.727+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.734+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.740+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.746+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.751+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.759+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.762+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.771+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.775+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.782+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.785+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.793+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.798+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.803+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.810+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.813+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.822+01:00
+Batter with more water, 1, 2020-03-01T19:38:42.824+01:00
+Cut pods in half, 1, 2020-03-01T19:38:42.832+01:00
+Cook beans, 1, 2020-03-01T19:38:42.863+01:00
+Cook beans, 1, 2020-03-01T19:38:42.875+01:00
+Cook beans, 1, 2020-03-01T19:38:42.887+01:00
+Cook beans, 1, 2020-03-01T19:38:42.898+01:00
+Cook beans, 1, 2020-03-01T19:38:42.908+01:00
+Cook beans, 1, 2020-03-01T19:38:42.919+01:00
+Cook beans, 1, 2020-03-01T19:38:42.929+01:00
+Cook beans, 1, 2020-03-01T19:38:42.942+01:00
+Cook beans, 1, 2020-03-01T19:38:42.955+01:00
+Cook beans, 1, 2020-03-01T19:38:42.967+01:00
+Drain beans, 1, 2020-03-01T19:38:42.994+01:00
+Drain beans, 1, 2020-03-01T19:38:43.007+01:00
+Drain beans, 1, 2020-03-01T19:38:43.019+01:00
+Drain beans, 1, 2020-03-01T19:38:43.032+01:00
+Drain beans, 1, 2020-03-01T19:38:43.045+01:00
+Drain beans, 1, 2020-03-01T19:38:43.058+01:00
+Drain beans, 1, 2020-03-01T19:38:43.069+01:00
+Drain beans, 1, 2020-03-01T19:38:43.082+01:00
+Drain beans, 1, 2020-03-01T19:38:43.093+01:00
+Drain beans, 1, 2020-03-01T19:38:43.105+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.135+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.145+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.157+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.169+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.181+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.192+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.205+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.215+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.226+01:00
+Pass pods through batter, 1, 2020-03-01T19:38:43.238+01:00
+Fry pods, 1, 2020-03-01T19:38:43.267+01:00
+Fry pods, 1, 2020-03-01T19:38:43.277+01:00
+Fry pods, 1, 2020-03-01T19:38:43.288+01:00
+Fry pods, 1, 2020-03-01T19:38:43.299+01:00
+Fry pods, 1, 2020-03-01T19:38:43.312+01:00
+Fry pods, 1, 2020-03-01T19:38:43.324+01:00
+Fry pods, 1, 2020-03-01T19:38:43.336+01:00
+Fry pods, 1, 2020-03-01T19:38:43.348+01:00
+Fry pods, 1, 2020-03-01T19:38:43.361+01:00
+Fry pods, 1, 2020-03-01T19:38:43.372+01:00

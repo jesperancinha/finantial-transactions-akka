@@ -1,5 +1,6 @@
-# peixinhos-da-horta-scala
+# peixinhos-da-horta-scala, the parallel way
 
+[![alt text](../Documentation/pr-baker.png "Baker")](https://ing-bank.github.io/baker/)
 [![alt text](../Documentation/pr-Scala.png "Scala")](https://www.scala-lang.org/)
 
 ## References
