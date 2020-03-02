@@ -46,6 +46,10 @@ In this setup, our restaurant is a specialist in making portuguese snacks and ma
 [![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](https://kotlinlang.org/)
 [![alt text](Documentation/pr-Clojure-s.png "Clojure")](https://clojure.org/)
 
+This project is also the official support project of my article on medium:
+
+[Baking Peixinhos da Horta with ING’s Baker Library](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
+
 ## Status
 
 [Under construction...](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/UnderConstruction.md)
