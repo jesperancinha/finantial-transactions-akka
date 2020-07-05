@@ -20,8 +20,6 @@
 [![GitHub top language](https://img.shields.io/github/languages/code-size/jesperancinha/portuguese-recipes.svg)](#)
 
 ## Introduction
-
-
 Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker project](https://ing-bank.github.io/baker). In this project, we will examine its potential.
 
 [Baker](https://ing-bank.github.io/baker) is a library which is responsible for the orchestration of different processes. Parallel to this, [Baker](https://ing-bank.github.io/baker/) creates [Graphviz](http://www.graphviz.org/) models and visualization flow charts which enable us to quickly visualize the status of our process.
