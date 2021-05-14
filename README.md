@@ -10,7 +10,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4ba1ad293d674b00b66db2db6fc6e3e9)](https://www.codacy.com/manual/jofisaes/portuguese-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/portuguese-recipes&amp;utm_campaign=Badge_Grade)
 [![CircleCI](https://circleci.com/gh/jesperancinha/portuguese-recipes.svg?style=svg)](https://circleci.com/gh/jesperancinha/portuguese-recipes)
 [![codebeat badge](https://codebeat.co/badges/58319e19-d5c1-414d-ad76-7f8acf833e60)](https://codebeat.co/projects/github-com-jesperancinha-portuguese-recipes-master)
-[![Build Status](https://travis-ci.org/jesperancinha/portuguese-recipes.svg?branch=master)](https://travis-ci.org/jesperancinha/portuguese-recipes)
+[![Build Status](https://travis-ci.com/jesperancinha/portuguese-recipes.svg?branch=master)](https://travis-ci.com/jesperancinha/portuguese-recipes)
 [![BCH compliance](https://bettercodehub.com/edge/badge/jesperancinha/portuguese-recipes?branch=master)](https://bettercodehub.com/results/jesperancinha/portuguese-recipes)
 [![Build status](https://ci.appveyor.com/api/projects/status/k2ukf8h95eys6npr?svg=true)](https://ci.appveyor.com/project/jesperancinha/portuguese-recipes)
 [![Known Vulnerabilities](https://snyk.io/test/github/jesperancinha/portuguese-recipes/badge.svg)](https://snyk.io/test/github/jesperancinha/portuguese-recipes)
