@@ -1,5 +1,13 @@
 # cataplana-de-ameijoas-clojure
 
+## Technologies used
+
+---
+
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/clojure-50.png "Clojure")](https://clojure.org/)
+
+---
+
 ## Introduction
 
 [![alt text](../Documentation/pr-baker.png "Baker")](https://ing-bank.github.io/baker/)
