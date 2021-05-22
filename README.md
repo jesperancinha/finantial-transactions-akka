@@ -46,6 +46,7 @@ Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker projec
 
 This project is also the official support project of my article on medium:
 
+[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/medium-20.png "Medium")](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
 [Baking Peixinhos da Horta with ING’s Baker Library](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
 
 ## Status
