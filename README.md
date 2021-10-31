@@ -35,7 +35,6 @@ ANNOUNCEMENT: This project is undergoing bulldozing changes at the moment. All t
 
 ## Introduction (OLD)
 
-| Project                                                          | Description                            | Language                                                                                -|
 |------------------------------------------------------------------|----------------------------------------|------------------------------------------------------------------------------------------|
 | [peixinhos-da-horta-scala](./peixinhos-da-horta-scala)           | Peixinhos da Horta baked in Scala      | [![alt text](Documentation/pr-Scala-s.png "Scala")](./peixinhos-da-horta-scala)          |
 | [bacalhao-a-bras-java](./bacalhao-a-bras-java)                   | Bacalhau à Brás baked in Java          | [![alt text](Documentation/pr-Java-s.png "Java")](./bacalhao-a-bras-java)                |
@@ -47,18 +46,7 @@ This project is also the official support project of my article on medium:
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/medium-20.png "Medium")](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
 [Baking Peixinhos da Horta with ING’s Baker Library](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
 
-## Status
-
-[Under construction...](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/UnderConstruction.md)
-
 ## How to
-
--   Lein
-
-```bash
-brew install leiningen
-lein lein new app cataplana-de-ameijoas-clojure
-```
 
 -   Git tag change
 ```bash
@@ -71,22 +59,10 @@ git pull --prune --tags
 
 ## References
 
--   [ING Baker](https://github.com/ing-bank/baker)
--   [ING Baker Document](https://ing-bank.github.io/baker)
 -   [Webgraphiz web App](http://www.webgraphviz.com/)
 -   [Graphiz website](http://www.graphviz.org/)
--   [scale.bythebay.io: Nikola Kasev, Declare, verify and execute microservices-based process flows](https://www.youtube.com/watch?v=0bWQwUmeXHU)
 -   [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method)
--   [Baker Runtime](https://search.maven.org/artifact/com.ing.baker/baker-runtime_2.12/3.0.1/jar)
--   [Ubuntu for Windows](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
--   [How to Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
--   [Oh My ZSH!](https://github.com/ohmyzsh/ohmyzsh/)
--   [10 easy ways to speed up Windows 10](https://www.cnet.com/how-to/easy-ways-to-speed-up-windows-10/)
 -   [The Scala Profgramming Language](https://www.scala-lang.org/)
--   [Oracle Store](https://shop.oracle.com/)
--   [The Clojure Programming Language](https://clojure.org/)
--   [Kotlin Programming Language](https://kotlinlang.org/)
--   [Clojure for the Brave](https://www.braveclojure.com/getting-started/)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
