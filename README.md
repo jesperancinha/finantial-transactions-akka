@@ -2,7 +2,7 @@
 
 ---
 
-[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Baker%20portuguese%20recipes&color=informational)](https://github.com/jesperancinha/portuguese-recipes) 
+[![Generic badge](https://img.shields.io/static/v1.svg?label=GitHub&message=Finantial%20Transactions%20in%20Akka%20💶&color=informational)](https://github.com/jesperancinha/portuguese-recipes)
 [![GitHub release](https://img.shields.io/github/release-pre/jesperancinha/portuguese-recipes.svg)](#)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -21,20 +21,19 @@
 
 ---
 
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/java-50.png "Java")](https://www.oracle.com/nl/java/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/lombok-50.png "Lombok")](https://projectlombok.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/kotlin-50.png "Kotlin")](https://kotlinlang.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/clojure-50.png "Clojure")](https://clojure.org/)
 [![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/scala-50.png "Scala")](https://www.scala-lang.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/mockito-50.png "Mockito")](https://site.mockito.org/)
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/assertj-50.png "AssertJ")](https://assertj.github.io/doc/)
 
 ---
 
-## Introduction
-Fellow colleagues at [ING](https://www.ing.nl/) have developed the [Baker project](https://ing-bank.github.io/baker). In this project, we will examine its potential.
+## Introduction for the Introduction
 
-[Baker](https://ing-bank.github.io/baker) is a library which is responsible for the orchestration of different processes. Parallel to this, [Baker](https://ing-bank.github.io/baker/) creates [Graphviz](http://www.graphviz.org/) models and visualization flow charts which enable us to quickly visualize the status of our process.
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧 Under construction</i> 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+
+ANNOUNCEMENT: This project is undergoing bulldozing changes at the moment. All the content will be changed and migrated to an in-depth exploration of the [Akka framework](https://akka.io/).
+
+
+
+## Introduction (OLD)
 
 | Project                                                          | Description                            | Language                                                                                -|
 |------------------------------------------------------------------|----------------------------------------|------------------------------------------------------------------------------------------|
@@ -52,57 +51,7 @@ This project is also the official support project of my article on medium:
 
 [Under construction...](https://github.com/jesperancinha/project-signer/blob/master/project-signer-templates/UnderConstruction.md)
 
-## Hints & Tricks
-
--   Run Bash.EXE on windows
-    -   Open PowerShell with Administrator rights
-    -   Issue this command `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
-    -   Wait for completion
-    -   Restart computer (Even if it says otherwise)
-    -   Got to Windows store and install [Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab)
-    -   Launch Ubuntu
-    -   Wait for completion
-    -   For Intellij, configure Terminal to run just bash.exe
-
--  Recipe for Java 8 on Windows Ubuntu Shell
-
-```bash
-apt -y install zip
-add-apt-repository ppa:webupd8team/java
-add-apt-repository ppa:linuxuprising/java
-apt-get update
-apt-get install oracle-java8-installer
-apt install openjdk-8-jdk
-```
-
--  Typical settings on a .bashrc file to get Gradle, GitPrompt, SDKMAN and some handy aliases.
-
-```bash
-export GRADLE_HOME=/opt/gradle/gradle-6.1.1
-export PATH=${GRADLE_HOME}/bin:${PATH}
-alias ll='ls -l -a --color=auto'
-if [ -f "/root/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_ONLY_IN_REPO=1
-    source /root/.bash-git-prompt/gitprompt.sh
-fi
-
-alias java13="sdk use java 13.0.2.hs-adpt"
-alias java12="sdk use java 12.0.2.hs-adpt"
-alias java8="sdk use java 8.0.242.hs-adpt"
-alias m2disable="rm ~/.m2/settings.xml"
-alias m2enable="cp /your_repo_folder/settings.xml ~/.m2/"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/root/.sdkman"
-[[ -s "/root/.sdkman/bin/sdkman-init.sh" ]] && source "/root/.sdkman/bin/sdkman-init.sh"
-```
-
--   Cool ZSH shell
-
-```bash
-apt -y install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+## How to
 
 -   Lein
 
@@ -138,11 +87,6 @@ git pull --prune --tags
 -   [The Clojure Programming Language](https://clojure.org/)
 -   [Kotlin Programming Language](https://kotlinlang.org/)
 -   [Clojure for the Brave](https://www.braveclojure.com/getting-started/)
-
-## Domain References
-
--   [Peixinhos da Horta by Vaqueiro](https://www.vaqueiro.pt/receitas/detalhe/1535/peixinhos-da-horta)
--   [BACALHAU À BRÁS (PORTUGUESE COD FISH À BRÁS)](https://easyportugueserecipes.com/bacalhau-a-bras-portuguese-cod-fish-a-bras/)
 
 ## About me 👨🏽‍💻🚀🏳️‍🌈
 
