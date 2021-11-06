@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 [![CircleCI](https://circleci.com/gh/jesperancinha/finantial-transactions-akka/tree/master.svg?style=svg)](https://circleci.com/gh/jesperancinha/finantial-transactions-akka/tree/master)
-[![Status badge](https://img.shields.io/static/v1.svg?label=Status&message=Under%20Construction%20🚧&color=purple)](https://github.com/jesperancinha/portuguese-recipes)
+[![Status badge](https://img.shields.io/static/v1.svg?label=Status&message=Under%20Construction%20🚧&color=informational)](https://github.com/jesperancinha/portuguese-recipes)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4ba1ad293d674b00b66db2db6fc6e3e9)](https://www.codacy.com/manual/jofisaes/portuguese-recipes?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jesperancinha/portuguese-recipes&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/58319e19-d5c1-414d-ad76-7f8acf833e60)](https://codebeat.co/projects/github-com-jesperancinha-portuguese-recipes-master)
