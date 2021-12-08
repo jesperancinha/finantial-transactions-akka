@@ -1,4 +1,4 @@
-# Recipes Project
+# Finantial Trasactions Akka
 
 ---
 
@@ -32,21 +32,6 @@
 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧 Under construction</i> 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 
 ANNOUNCEMENT: This project is undergoing bulldozing changes at the moment. All the content will be changed and migrated to an in-depth exploration of the [Akka framework](https://akka.io/).
-
-
-
-## Introduction (OLD)
-
-|------------------------------------------------------------------|----------------------------------------|------------------------------------------------------------------------------------------|
-| [peixinhos-da-horta-scala](./peixinhos-da-horta-scala)           | Peixinhos da Horta baked in Scala      | [![alt text](Documentation/pr-Scala-s.png "Scala")](./peixinhos-da-horta-scala)          |
-| [bacalhao-a-bras-java](./bacalhao-a-bras-java)                   | Bacalhau à Brás baked in Java          | [![alt text](Documentation/pr-Java-s.png "Java")](./bacalhao-a-bras-java)                |
-| [cataplana-de-ameijoas-clojure](./cataplana-de-ameijoas-clojure) | Cataplana de ameijoas baked in Clojure | [![alt text](Documentation/pr-Clojure-s.png "Clojure")](./cataplana-de-ameijoas-clojure) |
-| [filhos-de-natal-kotlin](./filhos-de-natal-kotlin)               | Filhós de Natal baked in Kotlin        | [![alt text](Documentation/pr-Kotlin-s.png "Kotlin")](./filhos-de-natal-kotlin)          |
-
-This project is also the official support project of my article on medium:
-
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-20/medium-20.png "Medium")](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
-[Baking Peixinhos da Horta with ING’s Baker Library](https://medium.com/swlh/baking-peixinhos-da-horta-with-ings-baker-library-528b39d2e8a7)
 
 ## How to
 
