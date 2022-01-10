@@ -9,12 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
-          command: mvn -B -DskipTests clean package
-
-      - run:
-          name: Test
-          command: mvn test
+          name: SBT Package
+          command: sbt package
 
 workflows:
   sample:
