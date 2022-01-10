@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build-and-test:
+    machine:
+      image: ubuntu-2004:202010-01
+          steps:
+            name: Test
+            command: mvn test
+workflows:
+  sample:
+    jobs:
+      - build-and-test
