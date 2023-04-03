@@ -21,11 +21,7 @@
 
 ## Technologies used
 
----
-
-[![alt text](https://raw.githubusercontent.com/jesperancinha/project-signer/master/project-signer-templates/icons-50/scala-50.png "Scala")](https://www.scala-lang.org/)
-
----
+Please check the [TechStack.md](TechStack.md) file for details.
 
 ## Introduction for the Introduction
 
